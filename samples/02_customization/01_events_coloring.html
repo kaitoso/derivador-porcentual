@@ -1,0 +1,278 @@
+<!doctype html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Coloring events</title>
+
+	<script src="../../codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../../codebase/dhtmlxscheduler.css" type="text/css" charset="utf-8">
+	<script src="../../codebase/ext/dhtmlxscheduler_key_nav.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_quick_info.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_collision.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_serialize.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_pdf.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_minical.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_units.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../codebase/ext/dhtmlxscheduler_year_view.js" type="text/javascript" charset="utf-8"></script>
+	<script src='../../codebase/ext/dhtmlxscheduler_timeline.js' type="text/javascript" charset="utf-8"></script>
+	<script src='../../codebase/ext/dhtmlxscheduler_tooltip.js' type="text/javascript" charset="utf-8"></script>
+<script src="../../codebase/ext/dhtmlxscheduler_multiselect.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<style type="text/css" >
+		html, body{
+			margin:0;
+			padding:0;
+			height:100%;
+			overflow:hidden;
+		}
+
+		.dhx_cal_event div.dhx_footer,
+		.dhx_cal_event.past_event div.dhx_footer,
+		.dhx_cal_event.event_rosa div.dhx_footer,
+		.dhx_cal_event.event_naranja div.dhx_footer,
+		.dhx_cal_event.event_verde div.dhx_footer{
+			background-color: transparent !important;
+		}
+		.dhx_cal_event .dhx_body{
+			-webkit-transition: opacity 0.1s;
+			transition: opacity 0.1s;
+			opacity: 0.7;
+		}
+		.dhx_cal_event .dhx_title{
+			line-height: 12px;
+		}
+		.dhx_cal_event_line:hover,
+		.dhx_cal_event:hover .dhx_body,
+		.dhx_cal_event.selected .dhx_body,
+		.dhx_cal_event.dhx_cal_select_menu .dhx_body{
+			opacity: 1;
+		}
+
+		.dhx_cal_event.event_naranja div, .dhx_cal_event_line.event_naranja{
+			background-color: orange !important;
+			border-color: #a36800 !important;
+		}
+		.dhx_cal_event_clear.event_naranja{
+			color:orange !important;
+		}
+
+		.dhx_cal_event.event_rojo div, .dhx_cal_event_line.event_rojo{
+			background-color: red !important;
+			border-color: #A30000 !important;
+		}
+		.dhx_cal_event_clear.event_rojo{
+			color:red !important;
+		}
+
+		.dhx_cal_event.event_verde div, .dhx_cal_event_line.event_verde{
+			background-color: #36BD14 !important;
+			border-color: #698490 !important;
+		}
+		.dhx_cal_event_clear.event_verde{
+			color:#36BD14 !important;
+		}
+
+		.dhx_cal_event.event_rosa div, .dhx_cal_event_line.event_rosa{
+			background-color: #FC5BD5 !important;
+			border-color: #839595 !important;
+		}
+		.dhx_cal_event_clear.event_rosa{
+			color:#B82594 !important;
+		}
+
+		.dhx_cal_event.event_negro div, .dhx_cal_event_line.event_negro{
+			background-color: #404040 !important;
+			border-color: #000000 !important;
+		}
+		.dhx_cal_event_clear.event_negro{
+			color: #404040 !important;
+		}
+	</style>
+
+	<script type="text/javascript" charset="utf-8">
+
+	//obtengo el dia actual
+		var dt=new Date();
+		var mes = dt.getMonth();
+		var dia = dt.getDate();
+		var año = dt.getFullYear();
+
+ 	     
+	var sections=[
+		{key:1, label:"Section A"},
+		{key:2, label:"Section B"},
+		{key:3, label:"Section C"},
+		{key:4, label:"Section D"}
+	];
+	scheduler.locale.labels.unit_tab = "Feriados";
+	scheduler.createUnitsView({
+		name:"unit",
+		property:"section_id",
+		list:sections
+	});
+	scheduler.locale.labels.timeline_tab = "Timeline";
+	scheduler.createTimelineView({
+		name:	"timeline",
+		x_unit:	"minute",
+		x_date:	"%H:%i",
+		x_step:	30,
+		x_size: 24,
+		x_start: 16,
+		x_length:	48,
+		y_unit:	sections,
+		y_property:	"section_id",
+		render:"bar"
+	});
+
+
+
+		function init() {
+			scheduler.config.xml_date="%Y-%m-%d %H:%i";
+			scheduler.config.time_step = 30;
+			scheduler.config.multi_day = true;
+			scheduler.config.multisection = true;
+			scheduler.locale.labels.section_subject = "Subject";
+			scheduler.config.first_hour = 00;
+			scheduler.config.limit_time_select = true;
+			scheduler.config.details_on_dblclick = true;
+			scheduler.config.details_on_create = true;
+			scheduler.config.repeat_precise = true;
+      scheduler.config.include_end_by = true;
+			scheduler.config.occurrence_timestamp_in_utc = true;
+			scheduler.config.touch = "force";
+
+
+
+
+			var modified_event_id = null;
+			scheduler.templates.event_class = function(start, end, event) {
+				if (event.id == modified_event_id)
+					return "copied_event";
+				return ""; // default
+			};
+
+			scheduler.attachEvent("onEventCopied", function(ev) {
+				dhtmlx.message("You've copied event: <br/><b>"+ev.text+"</b>");
+				modified_event_id = ev.id;
+				scheduler.updateEvent(ev.id);
+			});
+			scheduler.attachEvent("onEventCut", function(ev) {
+				dhtmlx.message("You've cut event: <br/><b>"+ev.text+"</b>");
+				modified_event_id = ev.id;
+				scheduler.updateEvent(ev.id);
+			});
+
+			scheduler.attachEvent("onEventPasted", function(isCopy, modified_ev, original_ev) {
+				modified_event_id = null;
+				scheduler.updateEvent(modified_ev.id);
+
+				var evs = scheduler.getEvents(modified_ev.start_date, modified_ev.end_date);
+				if (evs.length > 1) {
+					dhtmlx.modalbox({
+						text: "There is another event at this time! What do you want to do?",
+						width: "500px",
+						position: "middle",
+						buttons:["Revert changes", "Edit event", "Save changes"],
+						callback: function(index) {
+							switch(+index) {
+								case 0:
+									if (isCopy) {
+										// copy operation, need to delete new event
+										scheduler.deleteEvent(modified_ev.id);
+									} else {
+										// cut operation, need to restore dates
+										modified_ev.start_date = original_ev.start_date;
+										modified_ev.end_date = original_ev.end_date;
+										scheduler.setCurrentView();
+									}
+									break;
+								case 1:
+									scheduler.showLightbox(modified_ev.id);
+									break;
+								case 2:
+									return;
+							}
+						}
+					});
+				}
+			});
+			scheduler.templates.event_class=function(start, end, event){
+				var css = "";
+
+				if(event.subject) // if event has subject property then special class should be assigned
+					css += "event_"+event.subject;
+
+				if(event.id == scheduler.getState().select_id){
+					css += " selected";
+				}
+				return css; // default return
+
+				/*
+					Note that it is possible to create more complex checks
+					events with the same properties could have different CSS classes depending on the current view:
+
+					var mode = scheduler.getState().mode;
+					if(mode == "day"){
+						// custom logic here
+					}
+					else {
+						// custom logic here
+					}
+				*/
+			};
+
+
+
+
+			var subject = [
+				{ key: '', label: 'Azul' },
+				{ key: 'rosa', label: 'Rosa' },
+				{ key: 'naranja', label: 'Naranja' },
+				{ key: 'verde', label: 'verde' },
+				{ key: 'rojo', label: 'rojo' },
+				{ key: 'negro', label: 'negro' }
+			];
+
+			scheduler.config.lightbox.sections=[
+				{name:"Nombre", height:43, map_to:"text", type:"textarea" , focus:true},
+				{name:"Color", height:20, type:"select", options: subject, map_to:"subject" },
+				{name:"recurring", height:115, type:"recurring", map_to:"rec_type", button:"recurring"},
+				{name:"Tiempo", height:72, type:"time", map_to:"auto" }
+			];
+
+			scheduler.init('scheduler_here', new Date(año, mes, dia), "week");
+
+			scheduler.parse([
+				{ start_date: "2018-01-29 00:00", end_date: "2018-01-29 12:00", text:"Horario x", subject: 'rosa' },
+				{ start_date: "2018-01-30 01:00", end_date: "2018-01-30 03:00", text:"horario y", subject: 'naranja' },
+				{ start_date: "2018-01-31 03:00", end_date: "2018-01-31 05:00", text:"Horario z", subject: 'verde' },
+				{ start_date: "2018-02-01 05:00", end_date: "2018-02-01 07:00", text:"Horario x", subject: 'rojo' },
+				{ start_date: "2018-02-02 07:00", end_date: "2018-02-02 10:00", text:"Horario w" },
+				{ start_date: "2018-02-03 10:00", end_date: "2018-02-03 12:00", text:"Horario w", subject: 'negro' }
+
+			], "json");
+
+		}
+	</script>
+</head>
+<body onload="init();">
+	<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+		<div class="dhx_cal_navline">
+			  <div class='dhx_cal_export pdf' id='export_pdf' title='Export to PDF' onclick='scheduler.toPDF("http://dhtmlxscheduler.appspot.com/export/pdf", "color")'>&nbsp;</div>
+			<div class="dhx_cal_prev_button">&nbsp;</div>
+			<div class="dhx_cal_next_button">&nbsp;</div>
+			<div class="dhx_cal_today_button"></div>
+			<div class="dhx_cal_date"></div>
+			<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+			<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+			<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+			<div class="dhx_cal_tab" name="unit_tab" style="right:76px;"></div>
+
+		</div>
+		<div class="dhx_cal_header">
+		</div>
+		<div class="dhx_cal_data">
+		</div>
+	</div>
+</body>
