@@ -1,3 +1,2 @@
 # derivador-porcentual
-#comentario de nabo
-#otro comentario de nabo
+#carlos Valenzuela - e-contact
