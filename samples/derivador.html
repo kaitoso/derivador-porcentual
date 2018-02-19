@@ -20,6 +20,7 @@
   <!--importo diferentes clases de scheduler-->
 
   <script src="../codebase/ext/dhtmlxscheduler_key_nav.js" type="text/javascript" charset="utf-8"></script>
+ <!--<script src="../codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript" charset="utf-8"></script>-->
     <script src="../codebase/ext/dhtmlxscheduler_quick_info.js" type="text/javascript" charset="utf-8"></script>
   <script src="../codebase/ext/dhtmlxscheduler_collision.js" type="text/javascript" charset="utf-8"></script>
   <script src="../codebase/ext/dhtmlxscheduler_serialize.js" type="text/javascript" charset="utf-8"></script>
@@ -218,6 +219,7 @@
     scheduler.config.include_end_by = true;
     scheduler.locale.labels.unit_tab = "Feriados";
     scheduler.config.repeat_precise = true;
+
     //arreglo de dias que posteriormente se utilizará para mostrar el dia en el que sucede un evento
     var dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
   //probando cambios para subir archivo a gihub
@@ -226,6 +228,7 @@
     var detalle_tramo = []; // 1 Event de la grilla Schedule.
     var arreglo_eventos = [];
     var id_eventos = [];
+    var detalletramo2=[];
 
     // FALTA: ir a la BD y obtener los valores para "llenar" tramo_horario y detalle_tramo_horario
 
@@ -275,8 +278,8 @@
       id_detalle_tramo: "2",
       id_tramo: "1",
       descripcion_detalle: "Lunes",
-      fecha_y_hora_inicio: "2018-02-12 13:00",
-      fecha_y_hora_termino: "2018-02-12 18:00"
+      fecha_y_hora_inicio: "2018-02-19 13:00",
+      fecha_y_hora_termino: "2018-02-19 18:00"
     };
     detalle_tramo.push(detalle);
 
@@ -285,8 +288,8 @@
       id_detalle_tramo: "3",
       id_tramo: "1",
       descripcion_detalle: "Martes",
-      fecha_y_hora_inicio: "2018-02-13 13:00",
-      fecha_y_hora_termino: "2018-02-13 18:00"
+      fecha_y_hora_inicio: "2018-02-20 13:00",
+      fecha_y_hora_termino: "2018-02-20 18:00"
     };
     detalle_tramo.push(detalle);
 
@@ -295,8 +298,8 @@
       id_detalle_tramo: "4",
       id_tramo: "1",
       descripcion_detalle: "Miercoles",
-      fecha_y_hora_inicio: "2018-02-14 13:00",
-      fecha_y_hora_termino: "2018-02-14 18:00"
+      fecha_y_hora_inicio: "2018-02-21 13:00",
+      fecha_y_hora_termino: "2018-02-21 18:00"
     };
     detalle_tramo.push(detalle);
 
@@ -304,8 +307,8 @@
       id_detalle_tramo: "10",
       id_tramo: "1",
       descripcion_detalle: "Jueves",
-      fecha_y_hora_inicio: "2018-02-15 08:00",
-      fecha_y_hora_termino: "2018-02-15 23:00"
+      fecha_y_hora_inicio: "2018-02-22 08:00",
+      fecha_y_hora_termino: "2018-02-22 23:00"
     };
     detalle_tramo.push(detalle);
     //detalle tramo 2
@@ -313,8 +316,8 @@
       id_detalle_tramo: "5",
       id_tramo: "2",
       descripcion_detalle: "Sabado",
-      fecha_y_hora_inicio: "2018-02-17 07:00",
-      fecha_y_hora_termino: "2018-02-17 23:00"
+      fecha_y_hora_inicio: "2018-02-24 07:00",
+      fecha_y_hora_termino: "2018-02-24 23:00"
     };
     detalle_tramo.push(detalle);
 
@@ -323,8 +326,8 @@
       id_detalle_tramo: "6",
       id_tramo: "2",
       descripcion_detalle: "Domingo",
-      fecha_y_hora_inicio: "2018-02-18 08:00",
-      fecha_y_hora_termino: "2018-02-18 14:00"
+      fecha_y_hora_inicio: "2018-02-25 08:00",
+      fecha_y_hora_termino: "2018-02-25 14:00"
     };
     detalle_tramo.push(detalle);
 
@@ -333,8 +336,8 @@
       id_detalle_tramo: "7",
       id_tramo: "3",
       descripcion_detalle: "Lunes",
-      fecha_y_hora_inicio: "2018-02-12 11:00",
-      fecha_y_hora_termino: "2018-02-12 12:00"
+      fecha_y_hora_inicio: "2018-02-19 11:00",
+      fecha_y_hora_termino: "2018-02-19 12:00"
     };
     detalle_tramo.push(detalle);
 
@@ -343,8 +346,8 @@
       id_detalle_tramo: "8",
       id_tramo: "4",
       descripcion_detalle: "martes",
-      fecha_y_hora_inicio: "2018-02-13 11:00",
-      fecha_y_hora_termino: "2018-02-13 12:00"
+      fecha_y_hora_inicio: "2018-02-20 11:00",
+      fecha_y_hora_termino: "2018-02-20 12:00"
     };
     detalle_tramo.push(detalle);
 
@@ -353,8 +356,8 @@
       id_detalle_tramo: "9",
       id_tramo: "5",
       descripcion_detalle: "miercoles",
-      fecha_y_hora_inicio: "2018-02-14 06:00",
-      fecha_y_hora_termino: "2018-02-14 11:00"
+      fecha_y_hora_inicio: "2018-02-21 06:00",
+      fecha_y_hora_termino: "2018-02-21 11:00"
     };
     detalle_tramo.push(detalle);
 
@@ -363,13 +366,54 @@
       id_detalle_tramo: "10",
       id_tramo: "5",
       descripcion_detalle: "lunes",
-      fecha_y_hora_inicio: "2018-02-12 06:00",
-      fecha_y_hora_termino: "2018-02-12 10:00"
+      fecha_y_hora_inicio: "2018-02-19 06:00",
+      fecha_y_hora_termino: "2018-02-19 10:00"
     };
     detalle_tramo.push(detalle);
 
+// se agregan horarios para otro grupo de grupodistribucion
+var detalle = {
+  id_detalle_tramo: "2",
+  id_tramo: "2",
+  descripcion_detalle: "Lunes",
+  fecha_y_hora_inicio: "2018-02-19 06:00",
+  fecha_y_hora_termino: "2018-02-19 08:00"
+};
+detalletramo2.push(detalle);
+
+//detalle 2 tramo 1
+detalle = {
+  id_detalle_tramo: "3",
+  id_tramo: "4",
+  descripcion_detalle: "Martes",
+  fecha_y_hora_inicio: "2018-02-20 06:00",
+  fecha_y_hora_termino: "2018-02-20 08:00"
+};
+detalletramo2.push(detalle);
+
+//detalle 3 tramo 1
+detalle = {
+  id_detalle_tramo: "4",
+  id_tramo: "5",
+  descripcion_detalle: "Miercoles",
+  fecha_y_hora_inicio: "2018-02-21 06:00",
+  fecha_y_hora_termino: "2018-02-21 08:00"
+};
+detalletramo2.push(detalle);
+
+
+
+
+
+
+
+
+
+
+
+
     //colecion tramos horarios
-//que hace
+
     var id_tramo = [{
 
         key: '0',
@@ -474,6 +518,17 @@
       label: "feriado x"
     }];
 
+    var grupodistribu = [{
+      key: 0,
+      label: "Ventas"
+    }, {
+      key: 1,
+      label: "soporte"
+    }, {
+      key: 2,
+      label: "bloqueos"
+    }];
+
     //obtengo el dia actual
     var dt = new Date();
     var mes = dt.getMonth();
@@ -552,8 +607,76 @@
       map_to: "auto"
     }];
 
+    function carga2(){
+
+      for (var i = 0; i < tramo_horario.length; i++) {
 
 
+        for (var x = 0; x < detalletramo2.length; x++) {
+
+          if (detalletramo2[x].id_tramo == tramo_horario[i].id_tramo) {
+
+            scheduler.parse([{
+              start_date: detalletramo2[x].fecha_y_hora_inicio,
+              end_date: detalletramo2[x].fecha_y_hora_termino,
+              text: id_tramo[tramo_horario[i].descripcion_tramo].label,
+              colores: tramo_horario[i].color,
+              id_tramo: detalletramo2[x].id_tramo
+            }], "json");
+
+            console.log("evento" + [i]);
+            console.log("fecha inicio" + detalletramo2[x].fecha_y_hora_inicio);
+            console.log("fecha termino" + detalletramo2[x].fecha_y_hora_termino);
+            console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo, );
+            console.log("color" + tramo_horario[i].color);
+
+
+          }
+
+        }
+      }
+      arreglo_eventos = scheduler.getEvents();
+
+      for (var i = 0; i < arreglo_eventos.length; i++) {
+
+        id_eventos.push(arreglo_eventos[i].id);
+        detalletramo2[i].id_detalle_tramo = arreglo_eventos[i].id;
+      }
+    }
+
+function carga(){
+    for (var i = 0; i < tramo_horario.length; i++) {
+
+      for (var x = 0; x < detalle_tramo.length; x++) {
+
+        if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
+
+          scheduler.parse([{
+            start_date: detalle_tramo[x].fecha_y_hora_inicio,
+            end_date: detalle_tramo[x].fecha_y_hora_termino,
+            text: id_tramo[tramo_horario[i].descripcion_tramo].label,
+            colores: tramo_horario[i].color,
+            id_tramo: detalle_tramo[x].id_tramo
+          }], "json");
+
+          console.log("evento" + [i]);
+          console.log("fecha inicio" + detalle_tramo[x].fecha_y_hora_inicio);
+          console.log("fecha termino" + detalle_tramo[x].fecha_y_hora_termino);
+          console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo, );
+          console.log("color" + tramo_horario[i].color);
+
+        }
+
+      }
+    }
+    arreglo_eventos = scheduler.getEvents();
+
+    for (var i = 0; i < arreglo_eventos.length; i++) {
+
+      id_eventos.push(arreglo_eventos[i].id);
+      detalle_tramo[i].id_detalle_tramo = arreglo_eventos[i].id;
+    }
+}
 
 
     //funcion init aqui se establecen todas las configuraciones iniciales de scheduler
@@ -582,38 +705,29 @@
       scheduler.attachEvent("onEventChanged", EditaEvento);
 
 
-      for (var i = 0; i < tramo_horario.length; i++) {
 
 
-        for (var x = 0; x < detalle_tramo.length; x++) {
 
-          if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
+   var select = document.getElementById('selecciongrupo');
+   select.addEventListener('change',
+     function(){
+       var selectedOpti = this.options[select.selectedIndex];
+       if (selectedOpti.value=="vt") {
+              scheduler.clearAll();
+               carga();
 
-            scheduler.parse([{
-              start_date: detalle_tramo[x].fecha_y_hora_inicio,
-              end_date: detalle_tramo[x].fecha_y_hora_termino,
-              text: id_tramo[tramo_horario[i].descripcion_tramo].label,
-              colores: tramo_horario[i].color,
-              id_tramo: detalle_tramo[x].id_tramo
-            }], "json");
+       }
+       else if (selectedOpti.value=="sp") {
+         scheduler.clearAll();
+         carga2();
+       }
+       console.log(selectedOpti.value + ': ' + selectedOpti.text);
+     });
 
-            console.log("evento" + [i]);
-            console.log("fecha inicio" + detalle_tramo[x].fecha_y_hora_inicio);
-            console.log("fecha termino" + detalle_tramo[x].fecha_y_hora_termino);
-            console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo, );
-            console.log("color" + tramo_horario[i].color);
 
-          }
 
-        }
-      }
-      arreglo_eventos = scheduler.getEvents();
 
-      for (var i = 0; i < arreglo_eventos.length; i++) {
 
-        id_eventos.push(arreglo_eventos[i].id);
-        detalle_tramo[i].id_detalle_tramo = arreglo_eventos[i].id;
-      }
 
     } //FIN INIT
 
@@ -711,6 +825,11 @@
         }
 
         //al cambiar tramo horario setea automaticamente un color predeterminado para ese tramo
+
+
+
+
+
 
 
 
@@ -861,16 +980,23 @@
           Tramo horario
       </button>
       </div>
-      <div class="dropdown col-md-1">
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Selecione Grupo de distribucion
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Ventas</a>
-          <a class="dropdown-item" href="#">Soporte</a>
-          <a class="dropdown-item" href="#">Bloqueos</a>
-        </div>
+
+      <div class="col-md-3">
+        <select name="grupodistribucion" id="selecciongrupo">
+    <option value="" disabled selected>Seleccione grupo de distribucion</option>
+  	<option value="vt">Ventas</option>
+  	<option value="sp">Soporte</option>
+  	<option value="bq">Bloqueos</option>
+
+  </select>
       </div>
+
+
+            <div class="col-md-3">
+              <button class="btn btn-primary " type="button" id="avanza_semana" onclick="cambiasemana();"  aria-haspopup="true" aria-expanded="false">
+               avanzar semana
+            </button>
+            </div>
     </div>
 
     <!-- Modal Escenario de grupo distribucion-->

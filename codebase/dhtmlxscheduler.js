@@ -2088,7 +2088,7 @@ window.dhtmlXScheduler = window.scheduler = {
           year_tab: "Año",
           week_agenda_tab: "Agenda",
           grid_tab: "Grid",
-          drag_to_create: "Arrastra pra crear",
+          drag_to_create: "Arrastra para crear",
           drag_to_move: "arrastra para mover",
           message_ok: "Aceptar",
           message_cancel: "Cancelar",
