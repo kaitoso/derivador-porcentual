@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function verDetalles(evt) {
+              var target = evt.srcElement ? evt.srcElement : evt.target;
+              if (target.className != 'eliminar') document.location='http://localhost/';
+            }
+        </script>
+    </head>
+    <body>
+        <table border='1' style="width:50%;margin:0 auto;">
+            <tr onclick="verDetalles(event)">
+                <td>Info 1</td>
+                <td>Info 1</td>
+                <td>Info 1</td>
+                <td class="eliminar"><a href="http://loquesea.com">eliminar</a></td>
+            </tr>
+            <tr onclick="verDetalles(event)">
+                <td>Info 2</td>
+                <td>Info 2</td>
+                <td>Info 2</td>
+                <td class="eliminar"><a href="http://loquesea.com">eliminar</a></td>
+            </tr>
+        </table>
+    </body>
+</html>

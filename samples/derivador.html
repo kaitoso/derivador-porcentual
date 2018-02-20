@@ -20,8 +20,8 @@
   <!--importo diferentes clases de scheduler-->
 
   <script src="../codebase/ext/dhtmlxscheduler_key_nav.js" type="text/javascript" charset="utf-8"></script>
- <!--<script src="../codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript" charset="utf-8"></script>-->
-    <script src="../codebase/ext/dhtmlxscheduler_quick_info.js" type="text/javascript" charset="utf-8"></script>
+  <!--<script src="../codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript" charset="utf-8"></script>-->
+  <script src="../codebase/ext/dhtmlxscheduler_quick_info.js" type="text/javascript" charset="utf-8"></script>
   <script src="../codebase/ext/dhtmlxscheduler_collision.js" type="text/javascript" charset="utf-8"></script>
   <script src="../codebase/ext/dhtmlxscheduler_serialize.js" type="text/javascript" charset="utf-8"></script>
   <script src="../codebase/ext/dhtmlxscheduler_pdf.js" type="text/javascript" charset="utf-8"></script>
@@ -38,13 +38,13 @@
 
 
   <style type="text/css">
-    html,
-    body {
+
+    html, body {
       margin: 7%;
       margin-left: 15%;
-      padding: 0px;;
+      padding: 0px;
       height: 400px;
-      width:  950px;;
+      width: 950px;
       overflow: visible;
     }
 
@@ -197,6 +197,7 @@
   </style>
   <!--se inicializa el script-->
   <script type="text/javascript" charset="utf-8">
+
     //Configuracion scheduler
     scheduler.locale.labels.timeline_tab = "Timeline";
     scheduler.config.xml_date = "%Y-%m-%d %H:%i";
@@ -222,52 +223,52 @@
 
     //arreglo de dias que posteriormente se utilizará para mostrar el dia en el que sucede un evento
     var dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
-  //probando cambios para subir archivo a gihub
+
     //arreglo tramo horario y detalle tramo
     var tramo_horario = [];
     var detalle_tramo = []; // 1 Event de la grilla Schedule.
     var arreglo_eventos = [];
     var id_eventos = [];
-    var detalletramo2=[];
+    var detalletramo2 = [];
 
     // FALTA: ir a la BD y obtener los valores para "llenar" tramo_horario y detalle_tramo_horario
 
     // 1 Tramo:
     var tramo = {
-      id_tramo: "1",
-      descripcion_tramo: "1",
+      id_tramo: 1,
+      descripcion_tramo: 1,
       color: 5
     };
     tramo_horario.push(tramo);
 
     // 2 Tramo:
     tramo = {
-      id_tramo: "2",
-      descripcion_tramo: "2",
+      id_tramo: 2,
+      descripcion_tramo: 2,
       color: 1
     };
     tramo_horario.push(tramo);
 
     //3 tramo
     tramo = {
-      id_tramo: "3",
-      descripcion_tramo: "3",
+      id_tramo: 3,
+      descripcion_tramo: 3,
       color: 2
     };
     tramo_horario.push(tramo);
 
     //4 tramo
     tramo = {
-      id_tramo: "4",
-      descripcion_tramo: "4",
+      id_tramo: 4,
+      descripcion_tramo: 4,
       color: 3
     };
     tramo_horario.push(tramo);
 
     //5 tramo
     tramo = {
-      id_tramo: "5",
-      descripcion_tramo: "5",
+      id_tramo: 5,
+      descripcion_tramo: 5,
       color: 4
     };
     tramo_horario.push(tramo);
@@ -276,7 +277,7 @@
     //detalle tramo 1
     var detalle = {
       id_detalle_tramo: "2",
-      id_tramo: "1",
+      id_tramo: 1,
       descripcion_detalle: "Lunes",
       fecha_y_hora_inicio: "2018-02-19 13:00",
       fecha_y_hora_termino: "2018-02-19 18:00"
@@ -286,7 +287,7 @@
     //detalle 2 tramo 1
     detalle = {
       id_detalle_tramo: "3",
-      id_tramo: "1",
+      id_tramo: 1,
       descripcion_detalle: "Martes",
       fecha_y_hora_inicio: "2018-02-20 13:00",
       fecha_y_hora_termino: "2018-02-20 18:00"
@@ -296,7 +297,7 @@
     //detalle 3 tramo 1
     detalle = {
       id_detalle_tramo: "4",
-      id_tramo: "1",
+      id_tramo: 1,
       descripcion_detalle: "Miercoles",
       fecha_y_hora_inicio: "2018-02-21 13:00",
       fecha_y_hora_termino: "2018-02-21 18:00"
@@ -305,7 +306,7 @@
 
     detalle = {
       id_detalle_tramo: "10",
-      id_tramo: "1",
+      id_tramo: 1,
       descripcion_detalle: "Jueves",
       fecha_y_hora_inicio: "2018-02-22 08:00",
       fecha_y_hora_termino: "2018-02-22 23:00"
@@ -314,7 +315,7 @@
     //detalle tramo 2
     detalle = {
       id_detalle_tramo: "5",
-      id_tramo: "2",
+      id_tramo: 2,
       descripcion_detalle: "Sabado",
       fecha_y_hora_inicio: "2018-02-24 07:00",
       fecha_y_hora_termino: "2018-02-24 23:00"
@@ -324,7 +325,7 @@
     //detalle 2 tramo 2
     detalle = {
       id_detalle_tramo: "6",
-      id_tramo: "2",
+      id_tramo: 2,
       descripcion_detalle: "Domingo",
       fecha_y_hora_inicio: "2018-02-25 08:00",
       fecha_y_hora_termino: "2018-02-25 14:00"
@@ -334,7 +335,7 @@
     //detalle  tramo 3
     detalle = {
       id_detalle_tramo: "7",
-      id_tramo: "3",
+      id_tramo: 3,
       descripcion_detalle: "Lunes",
       fecha_y_hora_inicio: "2018-02-19 11:00",
       fecha_y_hora_termino: "2018-02-19 12:00"
@@ -344,7 +345,7 @@
     //detalle  tramo 4
     detalle = {
       id_detalle_tramo: "8",
-      id_tramo: "4",
+      id_tramo: 3,
       descripcion_detalle: "martes",
       fecha_y_hora_inicio: "2018-02-20 11:00",
       fecha_y_hora_termino: "2018-02-20 12:00"
@@ -354,7 +355,7 @@
     //detalle  tramo 5
     detalle = {
       id_detalle_tramo: "9",
-      id_tramo: "5",
+      id_tramo: 5,
       descripcion_detalle: "miercoles",
       fecha_y_hora_inicio: "2018-02-21 06:00",
       fecha_y_hora_termino: "2018-02-21 11:00"
@@ -364,170 +365,80 @@
     //detalle 2  tramo 5
     detalle = {
       id_detalle_tramo: "10",
-      id_tramo: "5",
+      id_tramo: 5,
       descripcion_detalle: "lunes",
       fecha_y_hora_inicio: "2018-02-19 06:00",
       fecha_y_hora_termino: "2018-02-19 10:00"
     };
     detalle_tramo.push(detalle);
 
-// se agregan horarios para otro grupo de grupodistribucion
-var detalle = {
-  id_detalle_tramo: "2",
-  id_tramo: "2",
-  descripcion_detalle: "Lunes",
-  fecha_y_hora_inicio: "2018-02-19 06:00",
-  fecha_y_hora_termino: "2018-02-19 08:00"
-};
-detalletramo2.push(detalle);
+    // se agregan horarios para otro grupo de grupodistribucion
+    var detalle = {
+      id_detalle_tramo: "2",
+      id_tramo: 2,
+      descripcion_detalle: "Lunes",
+      fecha_y_hora_inicio: "2018-02-19 06:00",
+      fecha_y_hora_termino: "2018-02-19 08:00"
+    };
+    detalletramo2.push(detalle);
 
-//detalle 2 tramo 1
-detalle = {
-  id_detalle_tramo: "3",
-  id_tramo: "4",
-  descripcion_detalle: "Martes",
-  fecha_y_hora_inicio: "2018-02-20 06:00",
-  fecha_y_hora_termino: "2018-02-20 08:00"
-};
-detalletramo2.push(detalle);
+    //detalle 2 tramo 1
+    detalle = {
+      id_detalle_tramo: "3",
+      id_tramo: 4,
+      descripcion_detalle: "Martes",
+      fecha_y_hora_inicio: "2018-02-20 06:00",
+      fecha_y_hora_termino: "2018-02-20 08:00"
+    };
+    detalletramo2.push(detalle);
 
-//detalle 3 tramo 1
-detalle = {
-  id_detalle_tramo: "4",
-  id_tramo: "5",
-  descripcion_detalle: "Miercoles",
-  fecha_y_hora_inicio: "2018-02-21 06:00",
-  fecha_y_hora_termino: "2018-02-21 08:00"
-};
-detalletramo2.push(detalle);
-
-
-
-
-
-
-
-
-
-
+    //detalle 3 tramo 1
+    detalle = {
+      id_detalle_tramo: "4",
+      id_tramo: 5,
+      descripcion_detalle: "Miercoles",
+      fecha_y_hora_inicio: "2018-02-21 06:00",
+      fecha_y_hora_termino: "2018-02-21 08:00"
+    };
+    detalletramo2.push(detalle);
 
 
     //colecion tramos horarios
 
-    var id_tramo = [{
-
-        key: '0',
-        label: 'Horario Habil AM'
-
-      }, {
-
-        key: '1',
-        label: 'Horario Nocturno'
-
-      }, {
-
-        key: '2',
-        label: 'Horario Habil Madrugada'
-
-      }, {
-
-        key: '3',
-        label: 'Horario inhabil X'
-
-      }, {
-
-        key: '4',
-        label: 'Horario Inhabil Y'
-
-      }, {
-
-        key: '5',
-        label: 'Horario habil pm'
-
-      },
-      {
-        key: '6',
-        label: 'Horario Libre'
-      }
-    ];
-
+    var id_tramo = [{  key: 0, label: 'Horario Habil AM'}
+                   ,{  key: 1, label: 'Horario Nocturno'}
+                   ,{  key: 2, label: 'Horario Habil Madrugada'}
+                   ,{  key: 3, label: 'Horario inhabil X'}
+                   ,{  key: 4, label: 'Horario Inhabil Y'}
+                   ,{  key: 5, label: 'Horario habil pm' }
+                   ,{  key: 6, label: 'Horario Libre'} ];
 
 
     //coleccion de colores
-    var colores = [{
+    var colores = [{  key: 0, label: 'azul'}
+                  ,{ key: 1, label: 'rosa' }
+                  ,{ key: 2, label: 'Naranja'}
+                  ,{ key: 3, label: 'verde'}
+                  ,{ key: 4, label: 'rojo' }
+                  ,{ key: 5, label: 'negro'}
+                  ,{ key: 6, label: 'morado'}
+                  ,{ key: 7, label: 'celeste'}
+                  ,{ key: 8, label: 'cafe'}
+                  ,{ key: 9, label: 'amarillo'}];
 
-        key: '0',
-        label: 'azul'
 
-      }, {
-
-        key: '1',
-        label: 'rosa'
-
-      }, {
-
-        key: '2',
-        label: 'Naranja'
-
-      }, {
-
-        key: '3',
-        label: 'verde'
-
-      }, {
-
-        key: '4',
-        label: 'rojo'
-
-      }, {
-
-        key: '5',
-        label: 'negro'
-
-      },
-      {
-        key: '6',
-        label: 'morado'
-      },
-      {
-        key: '7',
-        label: 'celeste'
-      },
-      {
-        key: '8',
-        label: 'cafe'
-      },
-      {
-        key: '9',
-        label: 'amarillo'
-      }
-    ];
 
     //coleccion de tipos de  feriados
-    var sections = [{
-      key: 1,
-      label: "Feriado Empresa"
-    }, {
-      key: 2,
-      label: "Feriado nacional"
-    }, {
-      key: 3,
-      label: "Feriado regional"
-    }, {
-      key: 4,
-      label: "feriado x"
-    }];
+    //falta dar tratamiento a los feriados
+    var sections = [{ key: 0, label: "Feriado Empresa"}
+                   ,{ key: 1, label: "Feriado nacional"}
+                   ,{ key: 2, label: "Feriado regional"}
+                   ,{ key: 3, label: "feriado x"}];
 
-    var grupodistribu = [{
-      key: 0,
-      label: "Ventas"
-    }, {
-      key: 1,
-      label: "soporte"
-    }, {
-      key: 2,
-      label: "bloqueos"
-    }];
+    //coloeccion grupo distribucion
+    var grupodistribu = [{ key: 0, label: "Ventas"}
+                        ,{ key: 1, label: "soporte"}
+                        ,{ key: 2, label: "bloqueos"}];
 
     //obtengo el dia actual
     var dt = new Date();
@@ -545,8 +456,6 @@ detalletramo2.push(detalle);
     });
 
     //se crea la linea de tiempo
-
-
     scheduler.createTimelineView({
       name: "timeline",
       x_unit: "minute",
@@ -559,6 +468,9 @@ detalletramo2.push(detalle);
       y_property: "section_id",
       render: "bar"
     });
+
+
+    //al cambiar tramo horario cambia automaticamente el select de color al que corresponda al tramo.
     var parent_onchange = function(event) {
       var colordetramo;
 
@@ -568,68 +480,61 @@ detalletramo2.push(detalle);
         }
       }
       scheduler.formSection('Color').setValue(colordetramo);
-
-
-
-
-
-
-
-
-
     };
+
+
+    //se cargan secciones del lightbox
     scheduler.config.lightbox.sections = [{
+        name: "id_tramo",
+        height: 20,
+        type: "select",
+        options: id_tramo,
+        map_to: "id_tramo",
+        onchange: parent_onchange
+      },
+      {
+        name: "descripcion",
+        height: 43,
+        map_to: "text",
+        type: "textarea",
+        focus: true
+      },
+      {
+        name: "Color",
+        height: 20,
+        type: "select",
+        options: colores,
+        map_to: "colores"
+      },
+      {
+        name: "Tiempo",
+        height: 72,
+        type: "time",
+        map_to: "auto"
+      }
+    ];
 
-      name: "id_tramo",
-      height: 20,
-      type: "select",
-      options: id_tramo,
-      map_to: "id_tramo",
-      onchange: parent_onchange
 
-
-    }, {
-      name: "descripcion",
-      height: 43,
-      map_to: "text",
-      type: "textarea",
-      focus: true
-    }, {
-      name: "Color",
-      height: 20,
-      type: "select",
-      options: colores,
-      map_to: "colores"
-    }, {
-      name: "Tiempo",
-      height: 72,
-      type: "time",
-      map_to: "auto"
-    }];
-
-    function carga2(){
-
+    function carga() {
       for (var i = 0; i < tramo_horario.length; i++) {
 
+        for (var x = 0; x < detalle_tramo.length; x++) {
 
-        for (var x = 0; x < detalletramo2.length; x++) {
-
-          if (detalletramo2[x].id_tramo == tramo_horario[i].id_tramo) {
+          if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
 
             scheduler.parse([{
-              start_date: detalletramo2[x].fecha_y_hora_inicio,
-              end_date: detalletramo2[x].fecha_y_hora_termino,
+              start_date: detalle_tramo[x].fecha_y_hora_inicio,
+              end_date: detalle_tramo[x].fecha_y_hora_termino,
               text: id_tramo[tramo_horario[i].descripcion_tramo].label,
               colores: tramo_horario[i].color,
-              id_tramo: detalletramo2[x].id_tramo
+              id_tramo: detalle_tramo[x].id_tramo
             }], "json");
-
-            console.log("evento" + [i]);
-            console.log("fecha inicio" + detalletramo2[x].fecha_y_hora_inicio);
-            console.log("fecha termino" + detalletramo2[x].fecha_y_hora_termino);
-            console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo, );
-            console.log("color" + tramo_horario[i].color);
-
+          console.log(id_tramo[i].label);
+            /*console.log("evento" + [i]);
+            console.log("fecha inicio" + detalle_tramo[x].fecha_y_hora_inicio);
+            console.log("fecha termino" + detalle_tramo[x].fecha_y_hora_termino);
+            console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo);
+            console.log("color" + tramo_horario[i].color);*/
 
           }
 
@@ -640,49 +545,41 @@ detalletramo2.push(detalle);
       for (var i = 0; i < arreglo_eventos.length; i++) {
 
         id_eventos.push(arreglo_eventos[i].id);
-        detalletramo2[i].id_detalle_tramo = arreglo_eventos[i].id;
+        detalle_tramo[i].id_detalle_tramo = arreglo_eventos[i].id;
       }
-    }
+    } //fin funcion carga
 
-function carga(){
-    for (var i = 0; i < tramo_horario.length; i++) {
+    function carga2() {
 
-      for (var x = 0; x < detalle_tramo.length; x++) {
-
-        if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
-
-          scheduler.parse([{
-            start_date: detalle_tramo[x].fecha_y_hora_inicio,
-            end_date: detalle_tramo[x].fecha_y_hora_termino,
-            text: id_tramo[tramo_horario[i].descripcion_tramo].label,
-            colores: tramo_horario[i].color,
-            id_tramo: detalle_tramo[x].id_tramo
-          }], "json");
-
-          console.log("evento" + [i]);
-          console.log("fecha inicio" + detalle_tramo[x].fecha_y_hora_inicio);
-          console.log("fecha termino" + detalle_tramo[x].fecha_y_hora_termino);
-          console.log("descripcion tramo" + tramo_horario[i].descripcion_tramo, );
-          console.log("color" + tramo_horario[i].color);
-
-        }
-
+      scheduler.parse([{
+        start_date: "2018-02-19 06:00",
+        end_date: "2018-02-19 08:00",
+        text: id_tramo[2].label,
+        colores: 1,
+        id_tramo: 2
       }
-    }
-    arreglo_eventos = scheduler.getEvents();
-
-    for (var i = 0; i < arreglo_eventos.length; i++) {
-
-      id_eventos.push(arreglo_eventos[i].id);
-      detalle_tramo[i].id_detalle_tramo = arreglo_eventos[i].id;
-    }
-}
+      ,{
+        start_date: "2018-02-20 06:00",
+        end_date: "2018-02-20 10:00",
+        text: id_tramo[1].label,
+        colores: 5,
+        id_tramo: 1
+      }
+    ], "json");
+    }// fin carga2
 
 
     //funcion init aqui se establecen todas las configuraciones iniciales de scheduler
     function init() {
 
-      //se inici scheduler en el dia actual y se carga en la vista week
+
+
+
+       scheduler.xy.scale_height = 20;
+       scheduler.xy.bar_height=10;
+
+
+      //se inicia scheduler en el dia actual y se carga en la vista week
       scheduler.init('scheduler_here', new Date(año, mes, dia), "week");
 
       //colorea los eventos de acuerdo al color seleccionado al crearlos.
@@ -705,269 +602,265 @@ function carga(){
       scheduler.attachEvent("onEventChanged", EditaEvento);
 
 
+      SelecionGrupoDist();
 
 
 
-   var select = document.getElementById('selecciongrupo');
-   select.addEventListener('change',
-     function(){
-       var selectedOpti = this.options[select.selectedIndex];
-       if (selectedOpti.value=="vt") {
-              scheduler.clearAll();
-               carga();
-
-       }
-       else if (selectedOpti.value=="sp") {
-         scheduler.clearAll();
-         carga2();
-       }
-       console.log(selectedOpti.value + ': ' + selectedOpti.text);
-     });
+    } //FIN FUNCION INIT
 
 
+//llama a la funcion para cargar los distintos grupos de distribucion en scheduler
+    function SelecionGrupoDist(){
+          var select = document.getElementById('selecciongrupo');
+          select.addEventListener('change',
+            function() {
+              var OpcionSeleccionada = this.options[select.selectedIndex];
+              if (OpcionSeleccionada.value == "vt") {
+                scheduler.clearAll();
+                carga();
 
-
-
-
-    } //FIN INIT
-
-
-
-
-
-
-        function CambiaColor(start, end, event) {
-
-          var css = "";
-
-
-          if (event.colores) {
-
-            for (var i = 0; i < colores.length; i++) {
-
-              if (event.colores == colores[i].key) {
-
-                css += "event_" + colores[i].label.toLowerCase();
-                idrosas = event.colores;
-
-
+              } else if (OpcionSeleccionada.value == "sp") {
+                scheduler.clearAll();
+                carga2();
+              } else if (OpcionSeleccionada.value == "bq") {
+                scheduler.clearAll();
               }
-
-            }
-          }
-          if (event.id == scheduler.getState().select_id) {
-
-            css += " selected";
-
-
-          }
-
-          return css; // default return
-
-
-        };
-
-        function Copiar(ev) {
-
-          dhtmlx.message("Has copiado un horario: <br/><b>" + ev.text + "</b>");
-
-          modified_event_id = ev.id;
-
-          scheduler.updateEvent(ev.id);
-
-        }
-
-        function Cortar(ev) {
-
-          dhtmlx.message("Cortaste un horario: <br/><b>" + ev.text + "</b>");
-          modified_event_id = ev.id;
-          scheduler.updateEvent(ev.id);
-
-        }
-
-        function Pegar(isCopy, modified_ev, original_ev) {
-
-          modified_event_id = null;
-          scheduler.updateEvent(modified_ev.id);
-          var evs = scheduler.getEvents(modified_ev.start_date, modified_ev.end_date);
-          if (evs.length > 1) {
-            dhtmlx.modalbox({
-              text: "Hay otro horario en este mismo tramo , que desea hacer?",
-              width: "500px",
-              position: "middle",
-              buttons: ["revertir cambios", "Editar evento", "guardar cambios"],
-              callback: function(index) {
-
-                switch (+index) {
-                  case 0:
-                    if (isCopy) {
-                      // copy operation, need to delete new event
-                      scheduler.deleteEvent(modified_ev.id);
-
-                    } else {
-                      // cut operation, need to restore dates
-                      modified_ev.start_date = original_ev.start_date;
-                      modified_ev.end_date = original_ev.end_date;
-                      scheduler.setCurrentView();
-                    }
-                    break;
-                  case 1:
-
-                    scheduler.showLightbox(modified_ev.id);
-
-                    break;
-                  case 2:
-                    return;
-                }
-              }
+              console.log(OpcionSeleccionada.value + ': ' + OpcionSeleccionada.text);
             });
+
+    }
+
+
+
+    function CambiaColor(start, end, event) {
+
+      var css = "";
+
+      if (event.colores) {
+
+        for (var i = 0; i < colores.length; i++) {
+          if (event.colores == colores[i].key) {
+            css += "event_" + colores[i].label.toLowerCase();
+            idrosas = event.colores;
           }
+
+        }
+      }
+
+      if (event.id == scheduler.getState().select_id) {
+        css += " selected";
+      }
+      return css;
+    }; //fin funcion cambia color
+
+
+
+    function Copiar(ev) {
+
+      dhtmlx.message("Has copiado un horario: <br/><b>" + ev.text + "</b>");
+      modified_event_id = ev.id;
+      scheduler.updateEvent(ev.id);
+    } //fin funcion Copiar
+
+
+    function Cortar(ev) {
+      dhtmlx.message("Cortaste un horario: <br/><b>" + ev.text + "</b>");
+      modified_event_id = ev.id;
+      scheduler.updateEvent(ev.id);
+    } // fin funcion cortar
+
+
+    function Pegar(isCopy, modified_ev, original_ev) {
+      modified_event_id = null;
+      scheduler.updateEvent(modified_ev.id);
+      var evs = scheduler.getEvents(modified_ev.start_date, modified_ev.end_date);
+      if (evs.length > 1) {
+        dhtmlx.modalbox({
+          text: "Hay otro horario en este mismo tramo , que desea hacer?",
+          width: "500px",
+          position: "middle",
+          buttons: ["revertir cambios", "Editar evento", "guardar cambios"],
+          callback: function(index) {
+
+            switch (+index) {
+              case 0:
+                if (isCopy) {
+                  // copy operation, need to delete new event
+                  scheduler.deleteEvent(modified_ev.id);
+
+                } else {
+                  // cut operation, need to restore dates
+                  modified_ev.start_date = original_ev.start_date;
+                  modified_ev.end_date = original_ev.end_date;
+                  scheduler.setCurrentView();
+                }
+                break;
+              case 1:
+
+                scheduler.showLightbox(modified_ev.id);
+
+                break;
+              case 2:
+                return;
+            }
+          }
+        });
+      }
+    } //fin funcion pegar
+
+
+    function AñadeEvento(id, ev) {
+      var encontrado = false;
+      tramo = {
+        id_tramo: ev.id_tramo,
+        descripcion_tramo: ev.text,
+        color: ev.colores
+      };
+
+      detalle = {
+        id_detalle_tramo: id,
+        id_tramo: scheduler.getEvent(id).id_tramo,
+        descripcion_detalle: dias[ev.start_date.getDay()],
+        fecha_y_hora_inicio: scheduler.getEvent(id).start_date,
+        fecha_y_hora_termino:scheduler.getEvent(id).end_date
+      };
+
+
+
+
+      for (var i = 0; i < tramo_horario.length; i++) {
+        //  if (detalle.id_tramo==tramo_horario[i].id_tramo ){
+
+        if (tramo.id_tramo == tramo_horario[i].id_tramo) {
+          ev.colores = tramo_horario[i].color;
+          scheduler.updateEvent(id);
+
+          encontrado = true;
+
         }
 
-        //al cambiar tramo horario setea automaticamente un color predeterminado para ese tramo
+      }
+
+      if (!encontrado) {
+        tramo_horario.push(tramo);
+        detalle_tramo.push(detalle);
+
+      } else {
+        detalle_tramo.push(detalle);
+      }
+      id_eventos.push(ev.id);
+      ev.text = id_tramo[ev.id_tramo].label;
 
 
+    }
+
+    function EditaEvento(id, ev) {
+
+      var coloraux;
+
+      //se insertan los datos dados por el usuario en el objeto.
+      tramo = {
+        id_tramo: ev.id_tramo,
+        descripcion_tramo: ev.text,
+        color: ev.colores
+      };
+
+      detalle = {
+        id_detalle_tramo: id,
+        id_tramo: ev.id_tramo,
+        descripcion_detalle: dias[ev.start_date.getDay()],
+        fecha_y_hora_inicio: ev.start_date,
+        fecha_y_hora_termino: ev.end_date
+      };
 
 
-
-
-
-
-        function AñadeEvento(id, ev) {
-          console.log("el primer evento es:" + ev.text);
-          console.log("en la funcion añadevento");
-
-
-
-
-          var encontrado = false;
-          tramo = {
-            id_tramo: ev.id_tramo,
-            descripcion_tramo: ev.text,
-            color: ev.colores
-          };
-
-          detalle = {
-            id_detalle_tramo: id,
-            id_tramo: scheduler.getEvent(id).id_tramo,
-            descripcion_detalle: dias[ev.start_date.getDay()],
-            fecha_y_hora_inicio: scheduler.getEvent(id).start_date,
-            fecha_y_hora_termino: scheduler.getEvent(id).end_date
-          };
-
-          //se insertan los valores dados por el usuario en el objeto tramo (id, descripcion y color)
-
-
-          //se insertan los datos dados por el usuario en el objeto.
-
-
-          for (var i = 0; i < tramo_horario.length; i++) {
-            //  if (detalle.id_tramo==tramo_horario[i].id_tramo ){
-
-            if (tramo.id_tramo == tramo_horario[i].id_tramo) {
-              ev.colores = tramo_horario[i].color;
+      for (var i = 0; i < detalle_tramo.length; i++) {
+        for (var x = 0; x < tramo_horario.length; x++) {
+          if (id == detalle_tramo[i].id_detalle_tramo) {
+            detalle_tramo[i].id_tramo = detalle.id_tramo;
+            if (tramo_horario[x].id_tramo == detalle_tramo[i].id_tramo) {
+              coloraux = ev.colores;
+              ev.colores = tramo_horario[x].color;
+              ev.text = id_tramo[ev.id_tramo].label;
               scheduler.updateEvent(id);
-
-              encontrado = true;
-
-
             }
-
-            console.log(scheduler.getEvent(id).start_date);
-            console.log(ev.start_date);
-
+            if (tramo_horario[x].id_tramo == ev.id_tramo) {
+              tramo_horario[x].color = coloraux;
+              ev.text = id_tramo[ev.id_tramo].label;
+              scheduler.updateEvent(id);
+            }
           }
-
-          if (!encontrado) {
-            tramo_horario.push(tramo);
-            detalle_tramo.push(detalle);
-
-          } else {
-            detalle_tramo.push(detalle);
-          }
-          id_eventos.push(ev.id);
-          ev.text = id_tramo[ev.id_tramo].label;
-          console.log(ev.text);
-          console.log(ev.id_tramo);
-          console.log(tramo.id_tramo);
-
         }
+      }
+  console.log("se actualizan todos los eventos");
 
-        function EditaEvento(id, ev) {
-
-          var coloraux;
-
-          console.log("el id del evento en el arreglo es ");
-
-          //se insertan los datos dados por el usuario en el objeto.
-          tramo = {
-            id_tramo: ev.id_tramo,
-            descripcion_tramo: ev.text,
-            color: ev.colores
-          };
-
-          detalle = {
-            id_detalle_tramo: id,
-            id_tramo: ev.id_tramo,
-            descripcion_detalle: dias[ev.start_date.getDay()],
-            fecha_y_hora_inicio: ev.start_date,
-            fecha_y_hora_termino: ev.end_date
-          };
-
-          console.log("dia " + detalle.descripcion_detalle);
-
-          for (var i = 0; i < detalle_tramo.length; i++) {
-
-            for (var x = 0; x < tramo_horario.length; x++) {
-              if (id == detalle_tramo[i].id_detalle_tramo) {
-                detalle_tramo[i].id_tramo = detalle.id_tramo;
-
-                if (tramo_horario[x].id_tramo == detalle_tramo[i].id_tramo) {
-
-                  coloraux = ev.colores;
-                  ev.colores = tramo_horario[x].color;
-                  ev.text = id_tramo[ev.id_tramo].label;
-                  scheduler.updateEvent(id);
-
-                }
-                if (tramo_horario[x].id_tramo == ev.id_tramo) {
-
-                  console.log("el tramo existe y se cambiara color");
-
-                  tramo_horario[x].color = coloraux;
-                  console.log(ev.colores);
-                  console.log("se cambio color y es " + colores[coloraux].label);
-                  ev.text = id_tramo[ev.id_tramo].label;
-                  scheduler.updateEvent(id);
-
-                  console.log("se actualiza evento");
-                }
-              }
+      for (var i = 0; i < id_eventos.length; i++){
+        if (ev.id_tramo == detalle_tramo[i].id_tramo){
+          scheduler.getEvent(id_eventos[i]).colores = coloraux;
+          for (var x = 0; x < tramo_horario.length; x++) {
+            if (coloraux == tramo_horario[x].color) {
+              scheduler.updateEvent(id_eventos[i]);
+              console.log("evento: " + detalle_tramo[i].id_detalle_tramo + " actualizado");
             }
           }
+        }
+      }
 
-          console.log("se actualizan todos los eventos");
+      for (var i = 0; i < detalle_tramo.length; i++) {
+        if (detalle_tramo[i].id_detalle_tramo == id) {
+          detalle_tramo[i].fecha_y_hora_inicio = detalle.fecha_y_hora_inicio;
+          detalle_tramo[i].fecha_y_hora_termino = detalle.fecha_y_hora_termino;
+        }
+      }
 
-          for (var i = 0; i < id_eventos.length; i++) {
-            if (ev.id_tramo == detalle_tramo[i].id_tramo) {
-              scheduler.getEvent(id_eventos[i]).colores = coloraux;
-              for (var x = 0; x < tramo_horario.length; x++) {
-                if (coloraux == tramo_horario[x].color) {
+    } //fin funcion EditaEvento
 
-                  scheduler.updateEvent(id_eventos[i]);
-                  console.log("evento: " + detalle_tramo[i].id_detalle_tramo + " actualizado");
+function llenaselect(){
+var select = document.getElementById("selecciongrupo");
+  var option= document.createElement("option");
+  option.innerHTML= document.getElementById("input_nombre_grupo").value;
+  select.appendChild(option);
+}
+function vaciaselect(borra){
 
-                }
+var select = document.getElementById("selecciongrupo");
 
-              }
+var i = borra.parentNode.firstChild.text;
 
-            }
+//$("#campo_select_").find().remove();
+
+alert(i);
 
 
-          }
+}
 
-        } //fin funcion EditaEvento
 
+function myCreateFunction()
+{
+var table = document.getElementById("tablagrupodist");
+
+  var largo=table.rows.length;
+
+  var row = table.insertRow(largo);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var nombregrup=document.getElementById("input_nombre_grupo").value;
+  var detallegrup=document.getElementById("input_detalle_grupo").value;
+  cell1.innerHTML = nombregrup;
+  cell2.innerHTML = detallegrup;
+  cell3.innerHTML = '<button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this); vaciaselect(this);">Borrar</button>';
+   llenaselect();
+  document.getElementById("input_nombre_grupo").value="";
+  document.getElementById("input_detalle_grupo").value= "";
+
+
+}
+function myDeleteFunction(borra)
+{
+var i = borra.parentNode.parentNode.rowIndex;
+document.getElementById("tablagrupodist").deleteRow(i);
+}
   </script>
 </head>
 
@@ -976,8 +869,8 @@ function carga(){
   <div class="dhx_body">
     <div class="row">
       <div class="col-md-2">
-        <button class="btn btn-primary " type="button" id="btnhorario" data-target="#TramoHorario" data-toggle="modal" aria-haspopup="true" aria-expanded="false">
-          Tramo horario
+        <button class="btn btn-primary " type="button" id="btnhorario" data-target="#agregagrupodistri" data-toggle="modal" aria-haspopup="true" aria-expanded="false">
+          Grupos distribucion
       </button>
       </div>
 
@@ -992,15 +885,13 @@ function carga(){
       </div>
 
 
-            <div class="col-md-3">
-              <button class="btn btn-primary " type="button" id="avanza_semana" onclick="cambiasemana();"  aria-haspopup="true" aria-expanded="false">
-               avanzar semana
-            </button>
-            </div>
+      <div class="col-md-3">
+
+      </div>
     </div>
 
     <!-- Modal Escenario de grupo distribucion-->
-    <div class="modal fade" id="TramoHorario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="agregagrupodistri" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
       <div class="modal-dialog">
 
@@ -1008,7 +899,7 @@ function carga(){
 
           <div class="modal-header">
 
-            <h4 class="modal-title" id="myModalLabel">Tramos horarios</h4>
+            <h4 class="modal-title" id="myModalLabel">Grupos de distribucion porcentual</h4>
 
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
 
@@ -1016,16 +907,78 @@ function carga(){
 
           <div id="nuevaAventura" class="modal-body">
 
-            <div id="gridbox" style="width:300px;height:400px;"></div>
+          <!--<div id="gridbox" style="width:300px;height:400px;"></div>-->
+                 <table id="tablagrupodist"class="table table-hover table-primary">
+                    <thead>
+                      <tr>
+                        <th>Nombre grupo</th>
+                        <th>Detalle</th>
+                        <th>Acción</th>
+                    </tr>
+                   </thead>
+                    <tbody>
+                      <tr>
+                      <td>Ventas</td>
+                      <td>grupo dist ventas</td>
+                        <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
+                      </tr>
+                      <tr>
+                      <td>Soporte</td>
+                      <td>grupo dist soporte</td>
+                      <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
 
+                      </tr>
+                      <tr>
+                      <td>Bloqueos</td>
+                      <td>grupo dist Bloqueo</td>
+                      <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
+
+                      </tr>
+                    </tbody>
+                 </table>
           </div>
 
           <div class="modal-footer">
 
-            <button type="button" class="btn btn-success" id="agregagrupodist" onClick="alert('Botón Agrega')">Agregar</button>
+            <button type="button" class="btn btn-success" id="agregagrupodist" data-target="#agregagrup" data-toggle="modal" aria-haspopup="true" aria-expanded="false" >Agregar</button>
 
-            <button type="button" class="btn btn-danger" id="borragrupodist" onClick="alert('Botón Borrar')">Borrar</button>
 
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--modal agregagrupodistribucion-->
+    <div class="modal fade" id="agregagrup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h4 class="modal-title" id="myModalLabel">Agregar grupo</h4>
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+
+          </div>
+
+          <div id="nuevaAventura" class="modal-body">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Nombregrupo y Detallegrupo</span>
+              </div>
+                <input type="text" class="form-control" id="input_nombre_grupo">
+                <input type="text" class="form-control" id="input_detalle_grupo">
+            </div>
+          </div>
+
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-success" id="agregagrupodist" onClick="myCreateFunction();">Agregar</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           </div>
         </div>

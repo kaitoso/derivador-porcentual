@@ -1,0 +1,26 @@
+{"data":[
+    {
+    "id_detalle_tramo": 2,
+    "id_tramo": 2,
+    "descripcion_detalle": "Lunes",
+    "fecha_y_hora_inicio": "2018-02-19 06:00",
+    "fecha_y_hora_termino": "2018-02-19 08:00"
+  },
+  {
+    "id_detalle_tramo": 3,
+    "id_tramo": 4,
+    "descripcion_detalle": "Martes",
+    "fecha_y_hora_inicio": "2018-02-20 06:00",
+    "fecha_y_hora_termino": "2018-02-20 08:00"
+  },
+  {
+    "id_detalle_tramo": 4,
+    "id_tramo": 5,
+    "descripcion_detalle": "Miercoles",
+    "fecha_y_hora_inicio": "2018-02-21 06:00",
+    "fecha_y_hora_termino": "2018-02-21 08:00"
+  }
+
+
+]
+}
