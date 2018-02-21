@@ -221,7 +221,56 @@
     scheduler.locale.labels.unit_tab = "Feriados";
     scheduler.config.repeat_precise = true;
 
-    //arreglo de dias que posteriormente se utilizará para mostrar el dia en el que sucede un evento
+    //colecion tramos horarios
+
+    var id_tramo = [{  key: 0, label: 'Habil-AM'}
+                   ,{  key: 1, label: 'Nocturno'}
+                   ,{  key: 2, label: 'Habil-Madrugada'}
+                   ,{  key: 3, label: 'nohabil-X'}
+                   ,{  key: 4, label: 'nohabil-Y'}
+                   ,{  key: 5, label: 'habil-pm'}
+                   ,{  key: 6, label: 'Libre'} ];
+
+   var desc_tramo= ["Horario Habil Am"
+                    ,"Horario Nocturno"
+                    ,"Horario Habil Madrugada"
+                    ,"Horario No Habil X"
+                    ,"Horario No Habil Y"
+                    ,"Horario Habil PM"
+                    ,"Horario Libre"];
+
+    //coleccion de colores
+    var colores = [{ key: 0, label: 'azul'}
+                  ,{ key: 1, label: 'rosa' }
+                  ,{ key: 2, label: 'Naranja'}
+                  ,{ key: 3, label: 'verde'}
+                  ,{ key: 4, label: 'rojo' }
+                  ,{ key: 5, label: 'negro'}
+                  ,{ key: 6, label: 'morado'}
+                  ,{ key: 7, label: 'celeste'}
+                  ,{ key: 8, label: 'cafe'}
+                  ,{ key: 9, label: 'amarillo'}];
+
+
+
+    //coleccion de tipos de  feriados
+    //falta dar tratamiento a los feriados
+    var sections = [{ key: 0, label: "Feriado Empresa"}
+                   ,{ key: 1, label: "Feriado nacional"}
+                   ,{ key: 2, label: "Feriado regional"}
+                   ,{ key: 3, label: "feriado x"}];
+
+    //coloeccion Horario
+    var horario = [{ key: 0, label: "Ventas"}
+                  ,{ key: 1, label: "soporte"}
+                  ,{ key: 2, label: "bloqueos"}];
+
+
+
+
+    /*arreglo de dias que posteriormente se utilizará para mostrar el
+    dia en el que sucede un evento*/
+
     var dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
 
     //arreglo tramo horario y detalle tramo
@@ -230,13 +279,18 @@
     var arreglo_eventos = [];
     var id_eventos = [];
     var detalletramo2 = [];
-
+    var datos_select=[];
+        //obtengo el dia actual
+        var dt = new Date();
+        var mes = dt.getMonth();
+        var dia = dt.getDate();
+        var año = dt.getFullYear();
     // FALTA: ir a la BD y obtener los valores para "llenar" tramo_horario y detalle_tramo_horario
 
     // 1 Tramo:
     var tramo = {
       id_tramo: 1,
-      descripcion_tramo: 1,
+      descripcion_tramo: desc_tramo[1],
       color: 5
     };
     tramo_horario.push(tramo);
@@ -244,7 +298,7 @@
     // 2 Tramo:
     tramo = {
       id_tramo: 2,
-      descripcion_tramo: 2,
+      descripcion_tramo: desc_tramo[2],
       color: 1
     };
     tramo_horario.push(tramo);
@@ -252,7 +306,7 @@
     //3 tramo
     tramo = {
       id_tramo: 3,
-      descripcion_tramo: 3,
+      descripcion_tramo: desc_tramo[3],
       color: 2
     };
     tramo_horario.push(tramo);
@@ -260,7 +314,7 @@
     //4 tramo
     tramo = {
       id_tramo: 4,
-      descripcion_tramo: 4,
+      descripcion_tramo: desc_tramo[4],
       color: 3
     };
     tramo_horario.push(tramo);
@@ -268,7 +322,7 @@
     //5 tramo
     tramo = {
       id_tramo: 5,
-      descripcion_tramo: 5,
+      descripcion_tramo: desc_tramo[5],
       color: 4
     };
     tramo_horario.push(tramo);
@@ -403,52 +457,6 @@
     detalletramo2.push(detalle);
 
 
-    //colecion tramos horarios
-
-    var id_tramo = [{  key: 0, label: 'Horario Habil AM'}
-                   ,{  key: 1, label: 'Horario Nocturno'}
-                   ,{  key: 2, label: 'Horario Habil Madrugada'}
-                   ,{  key: 3, label: 'Horario inhabil X'}
-                   ,{  key: 4, label: 'Horario Inhabil Y'}
-                   ,{  key: 5, label: 'Horario habil pm' }
-                   ,{  key: 6, label: 'Horario Libre'} ];
-
-
-    //coleccion de colores
-    var colores = [{  key: 0, label: 'azul'}
-                  ,{ key: 1, label: 'rosa' }
-                  ,{ key: 2, label: 'Naranja'}
-                  ,{ key: 3, label: 'verde'}
-                  ,{ key: 4, label: 'rojo' }
-                  ,{ key: 5, label: 'negro'}
-                  ,{ key: 6, label: 'morado'}
-                  ,{ key: 7, label: 'celeste'}
-                  ,{ key: 8, label: 'cafe'}
-                  ,{ key: 9, label: 'amarillo'}];
-
-
-
-    //coleccion de tipos de  feriados
-    //falta dar tratamiento a los feriados
-    var sections = [{ key: 0, label: "Feriado Empresa"}
-                   ,{ key: 1, label: "Feriado nacional"}
-                   ,{ key: 2, label: "Feriado regional"}
-                   ,{ key: 3, label: "feriado x"}];
-
-    //coloeccion grupo distribucion
-    var grupodistribu = [{ key: 0, label: "Ventas"}
-                        ,{ key: 1, label: "soporte"}
-                        ,{ key: 2, label: "bloqueos"}];
-
-    //obtengo el dia actual
-    var dt = new Date();
-    var mes = dt.getMonth();
-    var dia = dt.getDate();
-    var año = dt.getFullYear();
-
-
-
-
     scheduler.createUnitsView({
       name: "unit",
       property: "section_id",
@@ -522,10 +530,12 @@
 
           if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
 
+            var auxiliarsubindice= tramo_horario[i].descripcion_tramo;
+
             scheduler.parse([{
               start_date: detalle_tramo[x].fecha_y_hora_inicio,
               end_date: detalle_tramo[x].fecha_y_hora_termino,
-              text: id_tramo[tramo_horario[i].descripcion_tramo].label,
+              text: tramo_horario[i].descripcion_tramo,
               colores: tramo_horario[i].color,
               id_tramo: detalle_tramo[x].id_tramo
             }], "json");
@@ -576,7 +586,7 @@
 
 
        scheduler.xy.scale_height = 20;
-       scheduler.xy.bar_height=10;
+       scheduler.xy.bar_height = 10;
 
 
       //se inicia scheduler en el dia actual y se carga en la vista week
@@ -592,7 +602,7 @@
       scheduler.attachEvent("onEventCut", Cortar);
 
       //pega un evento
-      scheduler.attachEvent("onEventPasted", Pegar);
+      scheduler.attachEvent( "onEventPasted", Pegar);
 
       //carga elementos en arreglos de objetos tramo_horario y detalle_tramo y dibuja los eventos
       scheduler.attachEvent("onEventAdded", AñadeEvento);
@@ -611,17 +621,21 @@
 
 //llama a la funcion para cargar los distintos grupos de distribucion en scheduler
     function SelecionGrupoDist(){
-          var select = document.getElementById('selecciongrupo');
+          var select = document.getElementById('seleccionhorario');
           select.addEventListener('change',
             function() {
               var OpcionSeleccionada = this.options[select.selectedIndex];
+
               if (OpcionSeleccionada.value == "vt") {
-                scheduler.clearAll();
-                carga();
+                // scheduler.clearAll();
+                loadDataVentas();
+                carga(tramo_horario, detalle_tramo);
 
               } else if (OpcionSeleccionada.value == "sp") {
-                scheduler.clearAll();
-                carga2();
+                // scheduler.clearAll();
+                // carga2();
+                loadDataSoporte();
+                carga(tramo_horario, detalle_tramo);
               } else if (OpcionSeleccionada.value == "bq") {
                 scheduler.clearAll();
               }
@@ -711,9 +725,10 @@
 
     function AñadeEvento(id, ev) {
       var encontrado = false;
+
       tramo = {
         id_tramo: ev.id_tramo,
-        descripcion_tramo: ev.text,
+        descripcion_tramo: desc_tramo[ev.id_tramo],
         color: ev.colores
       };
 
@@ -741,7 +756,7 @@
 
       }
 
-      if (!encontrado) {
+      if (encontrado==false) {
         tramo_horario.push(tramo);
         detalle_tramo.push(detalle);
 
@@ -749,7 +764,8 @@
         detalle_tramo.push(detalle);
       }
       id_eventos.push(ev.id);
-      ev.text = id_tramo[ev.id_tramo].label;
+      ev.text =tramo.descripcion_tramo;
+      console.log(ev.text);
 
 
     }
@@ -761,9 +777,11 @@
       //se insertan los datos dados por el usuario en el objeto.
       tramo = {
         id_tramo: ev.id_tramo,
-        descripcion_tramo: ev.text,
+        descripcion_tramo: desc_tramo[ev.id_tramo],
         color: ev.colores
       };
+
+       ev.text=desc_tramo[ev.id_tramo];
 
       detalle = {
         id_detalle_tramo: id,
@@ -773,7 +791,7 @@
         fecha_y_hora_termino: ev.end_date
       };
 
-
+     ev.text
       for (var i = 0; i < detalle_tramo.length; i++) {
         for (var x = 0; x < tramo_horario.length; x++) {
           if (id == detalle_tramo[i].id_detalle_tramo) {
@@ -781,12 +799,12 @@
             if (tramo_horario[x].id_tramo == detalle_tramo[i].id_tramo) {
               coloraux = ev.colores;
               ev.colores = tramo_horario[x].color;
-              ev.text = id_tramo[ev.id_tramo].label;
+
               scheduler.updateEvent(id);
             }
             if (tramo_horario[x].id_tramo == ev.id_tramo) {
               tramo_horario[x].color = coloraux;
-              ev.text = id_tramo[ev.id_tramo].label;
+
               scheduler.updateEvent(id);
             }
           }
@@ -796,11 +814,15 @@
 
       for (var i = 0; i < id_eventos.length; i++){
         if (ev.id_tramo == detalle_tramo[i].id_tramo){
+
           scheduler.getEvent(id_eventos[i]).colores = coloraux;
+
           for (var x = 0; x < tramo_horario.length; x++) {
             if (coloraux == tramo_horario[x].color) {
+
               scheduler.updateEvent(id_eventos[i]);
-              console.log("evento: " + detalle_tramo[i].id_detalle_tramo + " actualizado");
+              console.log("evento: " + detalle_tramo[i].id_detalle_tramo + "actualizado");
+
             }
           }
         }
@@ -813,17 +835,26 @@
         }
       }
 
+
+      for (var i = 0; i < detalle_tramo.length; i++) {
+        console.log(detalle_tramo[i].descripcion_detalle);
+      }
+
     } //fin funcion EditaEvento
 
 function llenaselect(){
-var select = document.getElementById("selecciongrupo");
+
+var select = document.getElementById("seleccionhorario");
+var dato_agregar=document.getElementById("input_nombre_horario").value;
+   datos_select.push(e);
+
   var option= document.createElement("option");
-  option.innerHTML= document.getElementById("input_nombre_grupo").value;
+  option.innerHTML= document.getElementById("input_nombre_horario").value;
   select.appendChild(option);
 }
 function vaciaselect(borra){
 
-var select = document.getElementById("selecciongrupo");
+var select = document.getElementById("seleccionhorario");
 
 var i = borra.parentNode.firstChild.text;
 
@@ -845,14 +876,14 @@ var table = document.getElementById("tablagrupodist");
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
-  var nombregrup=document.getElementById("input_nombre_grupo").value;
-  var detallegrup=document.getElementById("input_detalle_grupo").value;
+  var nombregrup=document.getElementById("input_nombre_horario").value;
+  var detallegrup=document.getElementById("input_detalle_horario").value;
   cell1.innerHTML = nombregrup;
   cell2.innerHTML = detallegrup;
   cell3.innerHTML = '<button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this); vaciaselect(this);">Borrar</button>';
    llenaselect();
-  document.getElementById("input_nombre_grupo").value="";
-  document.getElementById("input_detalle_grupo").value= "";
+  document.getElementById("input_nombre_horario").value="";
+  document.getElementById("input_detalle_horario").value= "";
 
 
 }
@@ -860,6 +891,7 @@ function myDeleteFunction(borra)
 {
 var i = borra.parentNode.parentNode.rowIndex;
 document.getElementById("tablagrupodist").deleteRow(i);
+
 }
   </script>
 </head>
@@ -875,7 +907,7 @@ document.getElementById("tablagrupodist").deleteRow(i);
       </div>
 
       <div class="col-md-3">
-        <select name="grupodistribucion" id="selecciongrupo">
+        <select name="grupodistribucion" id="seleccionhorario">
     <option value="" disabled selected>Seleccione grupo de distribucion</option>
   	<option value="vt">Ventas</option>
   	<option value="sp">Soporte</option>
@@ -967,12 +999,18 @@ document.getElementById("tablagrupodist").deleteRow(i);
           </div>
 
           <div id="nuevaAventura" class="modal-body">
-            <div class="input-group">
+
+            <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="">Nombregrupo y Detallegrupo</span>
+                  <span class="input-group-text" id="">Nombre</span>
               </div>
-                <input type="text" class="form-control" id="input_nombre_grupo">
-                <input type="text" class="form-control" id="input_detalle_grupo">
+                <input id="input_nombre_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Detalle</span>
+              </div>
+                <input id="input_detalle_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
           </div>
 
