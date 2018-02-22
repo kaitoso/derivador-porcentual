@@ -12,10 +12,14 @@
 
 
   <!--importo bootstrap-4 y jquery 3.2-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <!--importo diferentes clases de scheduler-->
 
@@ -38,8 +42,12 @@
 
 
   <style type="text/css">
+    .pull-left {
+      float: left !important;
+    }
 
-    html, body {
+    html,
+    body {
       margin: 7%;
       margin-left: 15%;
       padding: 0px;
@@ -223,47 +231,47 @@
 
     //colecion tramos horarios
 
-    var id_tramo = [{  key: 0, label: 'Habil-AM'}
-                   ,{  key: 1, label: 'Nocturno'}
-                   ,{  key: 2, label: 'Habil-Madrugada'}
-                   ,{  key: 3, label: 'nohabil-X'}
-                   ,{  key: 4, label: 'nohabil-Y'}
-                   ,{  key: 5, label: 'habil-pm'}
-                   ,{  key: 6, label: 'Libre'} ];
+    var id_tramo = [{ key: 0, label: 'Habil-AM' }
+      , { key: 1, label: 'Nocturno' }
+      , { key: 2, label: 'Habil-Madrugada' }
+      , { key: 3, label: 'nohabil-X' }
+      , { key: 4, label: 'nohabil-Y' }
+      , { key: 5, label: 'habil-pm' }
+      , { key: 6, label: 'Libre' }];
 
-   var desc_tramo= ["Horario Habil Am"
-                    ,"Horario Nocturno"
-                    ,"Horario Habil Madrugada"
-                    ,"Horario No Habil X"
-                    ,"Horario No Habil Y"
-                    ,"Horario Habil PM"
-                    ,"Horario Libre"];
+    var desc_tramo = ["Horario Habil Am"
+      , "Horario Nocturno"
+      , "Horario Habil Madrugada"
+      , "Horario No Habil X"
+      , "Horario No Habil Y"
+      , "Horario Habil PM"
+      , "Horario Libre"];
 
     //coleccion de colores
-    var colores = [{ key: 0, label: 'azul'}
-                  ,{ key: 1, label: 'rosa' }
-                  ,{ key: 2, label: 'Naranja'}
-                  ,{ key: 3, label: 'verde'}
-                  ,{ key: 4, label: 'rojo' }
-                  ,{ key: 5, label: 'negro'}
-                  ,{ key: 6, label: 'morado'}
-                  ,{ key: 7, label: 'celeste'}
-                  ,{ key: 8, label: 'cafe'}
-                  ,{ key: 9, label: 'amarillo'}];
+    var colores = [{ key: 0, label: 'azul' }
+      , { key: 1, label: 'rosa' }
+      , { key: 2, label: 'Naranja' }
+      , { key: 3, label: 'verde' }
+      , { key: 4, label: 'rojo' }
+      , { key: 5, label: 'negro' }
+      , { key: 6, label: 'morado' }
+      , { key: 7, label: 'celeste' }
+      , { key: 8, label: 'cafe' }
+      , { key: 9, label: 'amarillo' }];
 
 
 
     //coleccion de tipos de  feriados
     //falta dar tratamiento a los feriados
-    var sections = [{ key: 0, label: "Feriado Empresa"}
-                   ,{ key: 1, label: "Feriado nacional"}
-                   ,{ key: 2, label: "Feriado regional"}
-                   ,{ key: 3, label: "feriado x"}];
+    var sections = [{ key: 0, label: "Feriado Empresa" }
+      , { key: 1, label: "Feriado nacional" }
+      , { key: 2, label: "Feriado regional" }
+      , { key: 3, label: "feriado x" }];
 
     //coloeccion Horario
-    var horario = [{ key: 0, label: "Ventas"}
-                  ,{ key: 1, label: "soporte"}
-                  ,{ key: 2, label: "bloqueos"}];
+    var horario = [{ key: 0, label: "Ventas" }
+      , { key: 1, label: "soporte" }
+      , { key: 2, label: "bloqueos" }];
 
 
 
@@ -279,155 +287,21 @@
     var arreglo_eventos = [];
     var id_eventos = [];
     var detalletramo2 = [];
-    var datos_select=[];
-        //obtengo el dia actual
-        var dt = new Date();
-        var mes = dt.getMonth();
-        var dia = dt.getDate();
-        var año = dt.getFullYear();
+    var datos_select = [];
+    var detalle, tramo;
+    //obtengo el dia actual
+    var dt = new Date();
+    var mes = dt.getMonth();
+    var dia = dt.getDate();
+    var año = dt.getFullYear();
     // FALTA: ir a la BD y obtener los valores para "llenar" tramo_horario y detalle_tramo_horario
 
-    // 1 Tramo:
-    var tramo = {
-      id_tramo: 1,
-      descripcion_tramo: desc_tramo[1],
-      color: 5
-    };
-    tramo_horario.push(tramo);
-
-    // 2 Tramo:
-    tramo = {
-      id_tramo: 2,
-      descripcion_tramo: desc_tramo[2],
-      color: 1
-    };
-    tramo_horario.push(tramo);
-
-    //3 tramo
-    tramo = {
-      id_tramo: 3,
-      descripcion_tramo: desc_tramo[3],
-      color: 2
-    };
-    tramo_horario.push(tramo);
-
-    //4 tramo
-    tramo = {
-      id_tramo: 4,
-      descripcion_tramo: desc_tramo[4],
-      color: 3
-    };
-    tramo_horario.push(tramo);
-
-    //5 tramo
-    tramo = {
-      id_tramo: 5,
-      descripcion_tramo: desc_tramo[5],
-      color: 4
-    };
-    tramo_horario.push(tramo);
 
 
-    //detalle tramo 1
-    var detalle = {
-      id_detalle_tramo: "2",
-      id_tramo: 1,
-      descripcion_detalle: "Lunes",
-      fecha_y_hora_inicio: "2018-02-19 13:00",
-      fecha_y_hora_termino: "2018-02-19 18:00"
-    };
-    detalle_tramo.push(detalle);
 
-    //detalle 2 tramo 1
-    detalle = {
-      id_detalle_tramo: "3",
-      id_tramo: 1,
-      descripcion_detalle: "Martes",
-      fecha_y_hora_inicio: "2018-02-20 13:00",
-      fecha_y_hora_termino: "2018-02-20 18:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle 3 tramo 1
-    detalle = {
-      id_detalle_tramo: "4",
-      id_tramo: 1,
-      descripcion_detalle: "Miercoles",
-      fecha_y_hora_inicio: "2018-02-21 13:00",
-      fecha_y_hora_termino: "2018-02-21 18:00"
-    };
-    detalle_tramo.push(detalle);
-
-    detalle = {
-      id_detalle_tramo: "10",
-      id_tramo: 1,
-      descripcion_detalle: "Jueves",
-      fecha_y_hora_inicio: "2018-02-22 08:00",
-      fecha_y_hora_termino: "2018-02-22 23:00"
-    };
-    detalle_tramo.push(detalle);
-    //detalle tramo 2
-    detalle = {
-      id_detalle_tramo: "5",
-      id_tramo: 2,
-      descripcion_detalle: "Sabado",
-      fecha_y_hora_inicio: "2018-02-24 07:00",
-      fecha_y_hora_termino: "2018-02-24 23:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle 2 tramo 2
-    detalle = {
-      id_detalle_tramo: "6",
-      id_tramo: 2,
-      descripcion_detalle: "Domingo",
-      fecha_y_hora_inicio: "2018-02-25 08:00",
-      fecha_y_hora_termino: "2018-02-25 14:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle  tramo 3
-    detalle = {
-      id_detalle_tramo: "7",
-      id_tramo: 3,
-      descripcion_detalle: "Lunes",
-      fecha_y_hora_inicio: "2018-02-19 11:00",
-      fecha_y_hora_termino: "2018-02-19 12:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle  tramo 4
-    detalle = {
-      id_detalle_tramo: "8",
-      id_tramo: 3,
-      descripcion_detalle: "martes",
-      fecha_y_hora_inicio: "2018-02-20 11:00",
-      fecha_y_hora_termino: "2018-02-20 12:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle  tramo 5
-    detalle = {
-      id_detalle_tramo: "9",
-      id_tramo: 5,
-      descripcion_detalle: "miercoles",
-      fecha_y_hora_inicio: "2018-02-21 06:00",
-      fecha_y_hora_termino: "2018-02-21 11:00"
-    };
-    detalle_tramo.push(detalle);
-
-    //detalle 2  tramo 5
-    detalle = {
-      id_detalle_tramo: "10",
-      id_tramo: 5,
-      descripcion_detalle: "lunes",
-      fecha_y_hora_inicio: "2018-02-19 06:00",
-      fecha_y_hora_termino: "2018-02-19 10:00"
-    };
-    detalle_tramo.push(detalle);
 
     // se agregan horarios para otro grupo de grupodistribucion
-    var detalle = {
+    detalle = {
       id_detalle_tramo: "2",
       id_tramo: 2,
       descripcion_detalle: "Lunes",
@@ -479,7 +353,7 @@
 
 
     //al cambiar tramo horario cambia automaticamente el select de color al que corresponda al tramo.
-    var parent_onchange = function(event) {
+    var parent_onchange = function (event) {
       var colordetramo;
 
       for (var i = 0; i < tramo_horario.length; i++) {
@@ -493,44 +367,359 @@
 
     //se cargan secciones del lightbox
     scheduler.config.lightbox.sections = [{
-        name: "id_tramo",
-        height: 20,
-        type: "select",
-        options: id_tramo,
-        map_to: "id_tramo",
-        onchange: parent_onchange
-      },
-      {
-        name: "descripcion",
-        height: 43,
-        map_to: "text",
-        type: "textarea",
-        focus: true
-      },
-      {
-        name: "Color",
-        height: 20,
-        type: "select",
-        options: colores,
-        map_to: "colores"
-      },
-      {
-        name: "Tiempo",
-        height: 72,
-        type: "time",
-        map_to: "auto"
-      }
-    ];
+      name: "id_tramo",
+      height: 20,
+      type: "select",
+      options: id_tramo,
+      map_to: "id_tramo",
+      onchange: parent_onchange
+    },
 
+    {
+      name: "Color",
+      height: 20,
+      type: "select",
+      options: colores,
+      map_to: "colores"
+    },
+    {
+      name: "Tiempo",
+      height: 72,
+      type: "time",
+      map_to: "auto"
+    }
+    ];
+    function loadDataVentas() {
+      detalle_tramo = [];
+      tramo_horario = []
+      //se definen los tramos horarios
+      tramo = {
+        id_tramo: 0,
+        descripcion_tramo: desc_tramo[0],
+        color: 0
+      };
+      // 2 Tramo:
+      tramo = {
+        id_tramo: 1,
+        descripcion_tramo: desc_tramo[1],
+        color: 5
+      };
+      tramo_horario.push(tramo);
+
+      // 3 Tramo:
+      tramo = {
+        id_tramo: 2,
+        descripcion_tramo: desc_tramo[2],
+        color: 1
+      };
+      tramo_horario.push(tramo);
+
+      //4 tramo
+      tramo = {
+        id_tramo: 3,
+        descripcion_tramo: desc_tramo[3],
+        color: 2
+      };
+      tramo_horario.push(tramo);
+
+      //5 tramo
+      tramo = {
+        id_tramo: 4,
+        descripcion_tramo: desc_tramo[4],
+        color: 3
+      };
+      tramo_horario.push(tramo);
+
+      //6 tramo
+      tramo = {
+        id_tramo: 5,
+        descripcion_tramo: desc_tramo[5],
+        color: 4
+      };
+      tramo_horario.push(tramo);
+
+      //tramo7
+      tramo = {
+        id_tramo: 6,
+        descripcion_tramo: desc_tramo[6],
+        color: 8
+      };
+      tramo_horario.push(tramo);
+
+
+
+      //detalle tramo 1
+      detalle = {
+        id_detalle_tramo: "2",
+        id_tramo: 1,
+        descripcion_detalle: "Lunes",
+        fecha_y_hora_inicio: "2018-02-19 13:00",
+        fecha_y_hora_termino: "2018-02-19 18:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 2 tramo 1
+      detalle = {
+        id_detalle_tramo: "3",
+        id_tramo: 1,
+        descripcion_detalle: "Martes",
+        fecha_y_hora_inicio: "2018-02-20 13:00",
+        fecha_y_hora_termino: "2018-02-20 18:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 3 tramo 1
+      detalle = {
+        id_detalle_tramo: "4",
+        id_tramo: 1,
+        descripcion_detalle: "Miercoles",
+        fecha_y_hora_inicio: "2018-02-21 13:00",
+        fecha_y_hora_termino: "2018-02-21 18:00"
+      };
+      detalle_tramo.push(detalle);
+
+      detalle = {
+        id_detalle_tramo: "10",
+        id_tramo: 1,
+        descripcion_detalle: "Jueves",
+        fecha_y_hora_inicio: "2018-02-22 08:00",
+        fecha_y_hora_termino: "2018-02-22 23:00"
+      };
+      detalle_tramo.push(detalle);
+      //detalle tramo 2
+      detalle = {
+        id_detalle_tramo: "5",
+        id_tramo: 2,
+        descripcion_detalle: "Sabado",
+        fecha_y_hora_inicio: "2018-02-24 07:00",
+        fecha_y_hora_termino: "2018-02-24 23:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 2 tramo 2
+      detalle = {
+        id_detalle_tramo: "6",
+        id_tramo: 2,
+        descripcion_detalle: "Domingo",
+        fecha_y_hora_inicio: "2018-02-25 08:00",
+        fecha_y_hora_termino: "2018-02-25 14:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 3
+      detalle = {
+        id_detalle_tramo: "7",
+        id_tramo: 3,
+        descripcion_detalle: "Lunes",
+        fecha_y_hora_inicio: "2018-02-19 11:00",
+        fecha_y_hora_termino: "2018-02-19 12:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 4
+      detalle = {
+        id_detalle_tramo: "8",
+        id_tramo: 3,
+        descripcion_detalle: "martes",
+        fecha_y_hora_inicio: "2018-02-20 11:00",
+        fecha_y_hora_termino: "2018-02-20 12:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 5
+      detalle = {
+        id_detalle_tramo: "9",
+        id_tramo: 5,
+        descripcion_detalle: "miercoles",
+        fecha_y_hora_inicio: "2018-02-21 06:00",
+        fecha_y_hora_termino: "2018-02-21 11:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 2  tramo 5
+      detalle = {
+        id_detalle_tramo: "10",
+        id_tramo: 5,
+        descripcion_detalle: "lunes",
+        fecha_y_hora_inicio: "2018-02-19 06:00",
+        fecha_y_hora_termino: "2018-02-19 10:00"
+      };
+      detalle_tramo.push(detalle);
+    }// fin loadDataVentas
+
+
+    function loadDataSoporte() {
+
+      detalle_tramo = [];
+
+      tramo_horario = []
+      //se definen los tramos horarios
+      tramo = {
+        id_tramo: 0,
+        descripcion_tramo: desc_tramo[0],
+        color: 0
+      };
+      // 2 Tramo:
+      tramo = {
+        id_tramo: 1,
+        descripcion_tramo: desc_tramo[1],
+        color: 5
+      };
+      tramo_horario.push(tramo);
+
+      // 3 Tramo:
+      tramo = {
+        id_tramo: 2,
+        descripcion_tramo: desc_tramo[2],
+        color: 1
+      };
+      tramo_horario.push(tramo);
+
+      //4 tramo
+      tramo = {
+        id_tramo: 3,
+        descripcion_tramo: desc_tramo[3],
+        color: 2
+      };
+      tramo_horario.push(tramo);
+
+      //5 tramo
+      tramo = {
+        id_tramo: 4,
+        descripcion_tramo: desc_tramo[4],
+        color: 3
+      };
+      tramo_horario.push(tramo);
+
+      //6 tramo
+      tramo = {
+        id_tramo: 5,
+        descripcion_tramo: desc_tramo[5],
+        color: 4
+      };
+      tramo_horario.push(tramo);
+
+      //tramo7
+      tramo = {
+        id_tramo: 6,
+        descripcion_tramo: desc_tramo[6],
+        color: 8
+      };
+      tramo_horario.push(tramo);
+
+      //detalle tramo 1
+      detalle = {
+        id_detalle_tramo: "11",
+        id_tramo: 1,
+        descripcion_detalle: "Lunes",
+        fecha_y_hora_inicio: "2018-02-19 13:00",
+        fecha_y_hora_termino: "2018-02-19 18:00"
+      };
+
+      detalle_tramo.push(detalle);
+
+      //detalle 2 tramo 1
+      detalle = {
+
+        id_detalle_tramo: "12",
+        id_tramo: 2,
+        descripcion_detalle: "Martes",
+        fecha_y_hora_inicio: "2018-02-20 13:00",
+        fecha_y_hora_termino: "2018-02-20 18:00"
+      };
+
+      detalle_tramo.push(detalle);
+
+      //detalle 3 tramo 1
+      detalle = {
+        id_detalle_tramo: "13",
+        id_tramo: 3,
+        descripcion_detalle: "Miercoles",
+        fecha_y_hora_inicio: "2018-02-21 13:00",
+        fecha_y_hora_termino: "2018-02-21 18:00"
+      };
+      detalle_tramo.push(detalle);
+
+      detalle = {
+        id_detalle_tramo: "14",
+        id_tramo: 3,
+        descripcion_detalle: "Jueves",
+        fecha_y_hora_inicio: "2018-02-22 08:00",
+        fecha_y_hora_termino: "2018-02-22 23:00"
+      };
+      detalle_tramo.push(detalle);
+      //detalle tramo 2
+      detalle = {
+        id_detalle_tramo: "15",
+        id_tramo: 4,
+        descripcion_detalle: "Sabado",
+        fecha_y_hora_inicio: "2018-02-24 07:00",
+        fecha_y_hora_termino: "2018-02-24 23:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 2 tramo 2
+      detalle = {
+        id_detalle_tramo: "16",
+        id_tramo: 4,
+        descripcion_detalle: "Domingo",
+        fecha_y_hora_inicio: "2018-02-25 08:00",
+        fecha_y_hora_termino: "2018-02-25 14:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 3
+      detalle = {
+        id_detalle_tramo: "17",
+        id_tramo: 5,
+        descripcion_detalle: "Lunes",
+        fecha_y_hora_inicio: "2018-02-19 11:00",
+        fecha_y_hora_termino: "2018-02-19 12:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 4
+      detalle = {
+        id_detalle_tramo: "18",
+        id_tramo: 6,
+        descripcion_detalle: "martes",
+        fecha_y_hora_inicio: "2018-02-20 11:00",
+        fecha_y_hora_termino: "2018-02-20 12:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle  tramo 5
+      detalle = {
+        id_detalle_tramo: "19",
+        id_tramo: 6,
+        descripcion_detalle: "miercoles",
+        fecha_y_hora_inicio: "2018-02-21 06:00",
+        fecha_y_hora_termino: "2018-02-21 11:00"
+      };
+      detalle_tramo.push(detalle);
+
+      //detalle 2  tramo 5
+      detalle = {
+        id_detalle_tramo: "20",
+        id_tramo: 6,
+        descripcion_detalle: "lunes",
+        fecha_y_hora_inicio: "2018-02-19 06:00",
+        fecha_y_hora_termino: "2018-02-19 10:00"
+      };
+      detalle_tramo.push(detalle);
+    }
 
     function carga() {
+
+      scheduler.clearAll();
+
       for (var i = 0; i < tramo_horario.length; i++) {
 
         for (var x = 0; x < detalle_tramo.length; x++) {
 
           if (detalle_tramo[x].id_tramo == tramo_horario[i].id_tramo) {
 
-            var auxiliarsubindice= tramo_horario[i].descripcion_tramo;
+            var auxiliarsubindice = tramo_horario[i].descripcion_tramo;
 
             scheduler.parse([{
               start_date: detalle_tramo[x].fecha_y_hora_inicio,
@@ -539,7 +728,7 @@
               colores: tramo_horario[i].color,
               id_tramo: detalle_tramo[x].id_tramo
             }], "json");
-          console.log(id_tramo[i].label);
+            console.log(id_tramo[i].label);
             /*console.log("evento" + [i]);
             console.log("fecha inicio" + detalle_tramo[x].fecha_y_hora_inicio);
             console.log("fecha termino" + detalle_tramo[x].fecha_y_hora_termino);
@@ -559,24 +748,6 @@
       }
     } //fin funcion carga
 
-    function carga2() {
-
-      scheduler.parse([{
-        start_date: "2018-02-19 06:00",
-        end_date: "2018-02-19 08:00",
-        text: id_tramo[2].label,
-        colores: 1,
-        id_tramo: 2
-      }
-      ,{
-        start_date: "2018-02-20 06:00",
-        end_date: "2018-02-20 10:00",
-        text: id_tramo[1].label,
-        colores: 5,
-        id_tramo: 1
-      }
-    ], "json");
-    }// fin carga2
 
 
     //funcion init aqui se establecen todas las configuraciones iniciales de scheduler
@@ -585,8 +756,8 @@
 
 
 
-       scheduler.xy.scale_height = 20;
-       scheduler.xy.bar_height = 10;
+      scheduler.xy.scale_height = 20;
+      scheduler.xy.bar_height = 10;
 
 
       //se inicia scheduler en el dia actual y se carga en la vista week
@@ -602,7 +773,7 @@
       scheduler.attachEvent("onEventCut", Cortar);
 
       //pega un evento
-      scheduler.attachEvent( "onEventPasted", Pegar);
+      scheduler.attachEvent("onEventPasted", Pegar);
 
       //carga elementos en arreglos de objetos tramo_horario y detalle_tramo y dibuja los eventos
       scheduler.attachEvent("onEventAdded", AñadeEvento);
@@ -619,28 +790,35 @@
     } //FIN FUNCION INIT
 
 
-//llama a la funcion para cargar los distintos grupos de distribucion en scheduler
-    function SelecionGrupoDist(){
-          var select = document.getElementById('seleccionhorario');
-          select.addEventListener('change',
-            function() {
-              var OpcionSeleccionada = this.options[select.selectedIndex];
+    //llama a la funcion para cargar los distintos grupos de distribucion en scheduler
+    function SelecionGrupoDist() {
+      var select = document.getElementById('seleccionhorario');
+      select.addEventListener('change',
+        function () {
+          var OpcionSeleccionada = this.options[select.selectedIndex];
 
-              if (OpcionSeleccionada.value == "vt") {
-                // scheduler.clearAll();
-                loadDataVentas();
-                carga(tramo_horario, detalle_tramo);
+          if (OpcionSeleccionada.value == "ventas") {
+            // scheduler.clearAll();
+            loadDataVentas();
+            carga(detalle_tramo);
+           
 
-              } else if (OpcionSeleccionada.value == "sp") {
-                // scheduler.clearAll();
-                // carga2();
-                loadDataSoporte();
-                carga(tramo_horario, detalle_tramo);
-              } else if (OpcionSeleccionada.value == "bq") {
-                scheduler.clearAll();
-              }
-              console.log(OpcionSeleccionada.value + ': ' + OpcionSeleccionada.text);
-            });
+            for (var i = 0; i < detalle_tramo.length; i++) {
+
+
+              console.log("o" + detalle_tramo[i]);
+
+            }
+          } else if (OpcionSeleccionada.value == "soporte") {
+            // scheduler.clearAll();
+            // carga2();
+            loadDataSoporte();
+            carga(tramo_horario, detalle_tramo);
+          } else if (OpcionSeleccionada.value == "bloqueos") {
+            scheduler.clearAll();
+          }
+          console.log(OpcionSeleccionada.value + ': ' + OpcionSeleccionada.text);
+        });
 
     }
 
@@ -694,7 +872,7 @@
           width: "500px",
           position: "middle",
           buttons: ["revertir cambios", "Editar evento", "guardar cambios"],
-          callback: function(index) {
+          callback: function (index) {
 
             switch (+index) {
               case 0:
@@ -737,7 +915,7 @@
         id_tramo: scheduler.getEvent(id).id_tramo,
         descripcion_detalle: dias[ev.start_date.getDay()],
         fecha_y_hora_inicio: scheduler.getEvent(id).start_date,
-        fecha_y_hora_termino:scheduler.getEvent(id).end_date
+        fecha_y_hora_termino: scheduler.getEvent(id).end_date
       };
 
 
@@ -756,7 +934,7 @@
 
       }
 
-      if (encontrado==false) {
+      if (encontrado == false) {
         tramo_horario.push(tramo);
         detalle_tramo.push(detalle);
 
@@ -764,7 +942,7 @@
         detalle_tramo.push(detalle);
       }
       id_eventos.push(ev.id);
-      ev.text =tramo.descripcion_tramo;
+      ev.text = tramo.descripcion_tramo;
       console.log(ev.text);
 
 
@@ -781,7 +959,7 @@
         color: ev.colores
       };
 
-       ev.text=desc_tramo[ev.id_tramo];
+      ev.text = desc_tramo[ev.id_tramo];
 
       detalle = {
         id_detalle_tramo: id,
@@ -791,7 +969,7 @@
         fecha_y_hora_termino: ev.end_date
       };
 
-     ev.text
+      ev.text
       for (var i = 0; i < detalle_tramo.length; i++) {
         for (var x = 0; x < tramo_horario.length; x++) {
           if (id == detalle_tramo[i].id_detalle_tramo) {
@@ -810,10 +988,10 @@
           }
         }
       }
-  console.log("se actualizan todos los eventos");
+      console.log("se actualizan todos los eventos");
 
-      for (var i = 0; i < id_eventos.length; i++){
-        if (ev.id_tramo == detalle_tramo[i].id_tramo){
+      for (var i = 0; i < id_eventos.length; i++) {
+        if (ev.id_tramo == detalle_tramo[i].id_tramo) {
 
           scheduler.getEvent(id_eventos[i]).colores = coloraux;
 
@@ -842,57 +1020,67 @@
 
     } //fin funcion EditaEvento
 
-function llenaselect(){
+    function llenaselect() {
 
-var select = document.getElementById("seleccionhorario");
-var dato_agregar=document.getElementById("input_nombre_horario").value;
-   datos_select.push(e);
+      var select = document.getElementById("seleccionhorario");
+      var dato_agregar = document.getElementById("input_nombre_horario").value;
 
-  var option= document.createElement("option");
-  option.innerHTML= document.getElementById("input_nombre_horario").value;
-  select.appendChild(option);
-}
-function vaciaselect(borra){
+       datos_select.push(dato_agregar);
+       var index= datos_select.indexOf(dato_agregar);
+      var option = document.createElement("option");
+      option.innerHTML = datos_select[index];
+      select.appendChild(option);
+    }
+   
+    function vaciaselect(borra) {
 
-var select = document.getElementById("seleccionhorario");
+      var select = document.getElementById("seleccionhorario");
 
-var i = borra.parentNode.firstChild.text;
+      var i = borra.parentNode.previousSibling.previousSibling.innerHTML;
+      
+      var index = datos_select.indexOf(i);
 
-//$("#campo_select_").find().remove();
+      if (index > -1) {
+        datos_select.splice(index, 1);
+      }
+        
+       for (let i = 1; i < select.length; i++) {
+         
+        select.remove(i);
 
-alert(i);
-
-
-}
-
-
-function myCreateFunction()
-{
-var table = document.getElementById("tablagrupodist");
-
-  var largo=table.rows.length;
-
-  var row = table.insertRow(largo);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var nombregrup=document.getElementById("input_nombre_horario").value;
-  var detallegrup=document.getElementById("input_detalle_horario").value;
-  cell1.innerHTML = nombregrup;
-  cell2.innerHTML = detallegrup;
-  cell3.innerHTML = '<button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this); vaciaselect(this);">Borrar</button>';
-   llenaselect();
-  document.getElementById("input_nombre_horario").value="";
-  document.getElementById("input_detalle_horario").value= "";
+       }
+        
+      
+      
+    }
 
 
-}
-function myDeleteFunction(borra)
-{
-var i = borra.parentNode.parentNode.rowIndex;
-document.getElementById("tablagrupodist").deleteRow(i);
+    function myCreateFunction() {
+      var table = document.getElementById("tablagrupodist");
 
-}
+      var largo = table.rows.length;
+
+      var row = table.insertRow(largo);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var nombregrup = document.getElementById("input_nombre_horario").value;
+      var detallegrup = document.getElementById("input_detalle_horario").value;
+      cell1.innerHTML = nombregrup;
+      cell2.innerHTML = detallegrup;
+      cell3.innerHTML = '<button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this); ">Borrar</button>';
+      llenaselect();
+      document.getElementById("input_nombre_horario").value = "";
+      document.getElementById("input_detalle_horario").value = "";
+
+
+    }
+    function myDeleteFunction(borra) {
+      var i = borra.parentNode.parentNode.rowIndex;
+      document.getElementById("tablagrupodist").deleteRow(i);
+      document.getElementById("")
+      vaciaselect(borra);
+    }
   </script>
 </head>
 
@@ -900,26 +1088,29 @@ document.getElementById("tablagrupodist").deleteRow(i);
 
   <div class="dhx_body">
     <div class="row">
-      <div class="col-md-2">
-        <button class="btn btn-primary " type="button" id="btnhorario" data-target="#agregagrupodistri" data-toggle="modal" aria-haspopup="true" aria-expanded="false">
+      <div class="col-md-4">
+        <button class="btn btn-primary " type="button" id="btnhorario" data-target="#agregagrupodistri" data-toggle="modal" aria-haspopup="true"
+          aria-expanded="false">
           Grupos distribucion
-      </button>
+        </button>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <select name="grupodistribucion" id="seleccionhorario">
-    <option value="" disabled selected>Seleccione grupo de distribucion</option>
-  	<option value="vt">Ventas</option>
-  	<option value="sp">Soporte</option>
-  	<option value="bq">Bloqueos</option>
+          <option value="" disabled selected>Seleccione grupo de distribucion</option>
+         
 
-  </select>
+        </select>
       </div>
 
 
-      <div class="col-md-3">
-
+      <div class="col-md-4">
+        <button class="btn btn-success " type="button" id="btnguardagrupo" style="margin-left: 35% !important;" onclick='confirm("Desea Guardar los cambios");'>
+          Guardar Cambios
+        </button>
       </div>
+
+
     </div>
 
     <!-- Modal Escenario de grupo distribucion-->
@@ -933,46 +1124,34 @@ document.getElementById("tablagrupodist").deleteRow(i);
 
             <h4 class="modal-title" id="myModalLabel">Grupos de distribucion porcentual</h4>
 
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Cerrar</span>
+            </button>
 
           </div>
 
           <div id="nuevaAventura" class="modal-body">
 
-          <!--<div id="gridbox" style="width:300px;height:400px;"></div>-->
-                 <table id="tablagrupodist"class="table table-hover table-primary">
-                    <thead>
-                      <tr>
-                        <th>Nombre grupo</th>
-                        <th>Detalle</th>
-                        <th>Acción</th>
-                    </tr>
-                   </thead>
-                    <tbody>
-                      <tr>
-                      <td>Ventas</td>
-                      <td>grupo dist ventas</td>
-                        <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
-                      </tr>
-                      <tr>
-                      <td>Soporte</td>
-                      <td>grupo dist soporte</td>
-                      <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
-
-                      </tr>
-                      <tr>
-                      <td>Bloqueos</td>
-                      <td>grupo dist Bloqueo</td>
-                      <td> <button type="button" class="btn btn-danger" id="borragrupodist" onClick="myDeleteFunction(this);">Borrar</button></td>
-
-                      </tr>
-                    </tbody>
-                 </table>
+            <!--<div id="gridbox" style="width:300px;height:400px;"></div>-->
+            <table id="tablagrupodist" class="table table-hover table-primary">
+              <thead>
+                <tr>
+                  <th>Nombre grupo</th>
+                  <th>Detalle</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+              </tbody>
+            </table>
           </div>
 
           <div class="modal-footer">
 
-            <button type="button" class="btn btn-success" id="agregagrupodist" data-target="#agregagrup" data-toggle="modal" aria-haspopup="true" aria-expanded="false" >Agregar</button>
+            <button type="button" class="btn btn-success" id="agregagrupodist" data-target="#agregagrup" data-toggle="modal" aria-haspopup="true"
+              aria-expanded="false">Agregar</button>
 
 
 
@@ -994,7 +1173,10 @@ document.getElementById("tablagrupodist").deleteRow(i);
 
             <h4 class="modal-title" id="myModalLabel">Agregar grupo</h4>
 
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Cerrar</span>
+            </button>
 
           </div>
 
@@ -1002,15 +1184,15 @@ document.getElementById("tablagrupodist").deleteRow(i);
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                  <span class="input-group-text" id="">Nombre</span>
+                <span class="input-group-text" id="">Nombre</span>
               </div>
-                <input id="input_nombre_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input id="input_nombre_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                  <span class="input-group-text" id="">Detalle</span>
+                <span class="input-group-text" id="">Detalle</span>
               </div>
-                <input id="input_detalle_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input id="input_detalle_horario" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
           </div>
 
@@ -1029,7 +1211,7 @@ document.getElementById("tablagrupodist").deleteRow(i);
   <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
     <div class="dhx_cal_navline">
 
-      <div class='dhx_cal_export pdf' id='export_pdf' title='Export to PDF' onclick='scheduler.toPDF("http://dhtmlxscheduler.appspot.com/export/pdf", "color")'>&nbsp;</div>
+      <div class='dhx_cal_export pdf' id='export_pdf' title='Esportar Horario a PDF' onclick='scheduler.toPDF("http://dhtmlxscheduler.appspot.com/export/pdf", "color")'>&nbsp;</div>
       <div class="dhx_cal_prev_button">&nbsp;</div>
 
       <div class="dhx_cal_next_button">&nbsp;</div>
